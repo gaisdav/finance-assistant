@@ -1,21 +1,22 @@
 import React, { FC } from "react";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 
-import CalendarVm from "../vm/calendar.vm";
-import CalendarService from "../service/calendar.service";
 import Week from "./components/Week";
 import { useStyles } from "./styles";
 
-const service = new CalendarService();
-const {
-  monthString,
-  monthDays,
-  decrementMonth,
-  incrementMonth,
-} = new CalendarVm(service);
+interface IProps {
+  calendarApi: ICalendarVM;
+}
 
-const Calendar: FC = () => {
+const Calendar: FC<IProps> = ({ calendarApi }) => {
   const { monthWrapper } = useStyles();
+
+  const {
+    incrementMonth,
+    monthString,
+    decrementMonth,
+    monthDays,
+  } = calendarApi;
 
   return (
     <div className={monthWrapper}>

@@ -3,10 +3,16 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Calendar from "./Calendar/ui";
+import CalendarVm from "./Calendar/vm/calendar.vm";
+import { configure } from "mobx";
+
+configure({ enforceActions: "observed" });
+
+const calendarApi: ICalendarVM = new CalendarVm();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calendar />
+    <Calendar calendarApi={calendarApi} />
   </React.StrictMode>,
   document.getElementById("root")
 );

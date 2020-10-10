@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-      "experimentalDecorators": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "target": "es5",
     "lib": [
       "dom",
@@ -13,6 +14,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
