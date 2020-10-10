@@ -21,6 +21,7 @@ class CalendarVM implements ICalendarVM {
     return this._date;
   }
 
+  @computed
   get monthString(): string {
     return new Date(this.year, this.month, this.date).toLocaleString(
       "default",
