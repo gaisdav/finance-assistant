@@ -4,7 +4,7 @@ class CalendarVM implements ICalendarVM {
   private readonly _date: number;
   private readonly _day: number;
   private _month: number;
-  private readonly _year: number;
+  private _year: number;
 
   get year(): number {
     return this._year;
@@ -72,11 +72,21 @@ class CalendarVM implements ICalendarVM {
   }
 
   incrementMonth = () => {
-    ++this._month;
+    if (this._month === 11) {
+      this._month = 0;
+      ++this._year;
+    } else {
+      ++this._month;
+    }
   };
 
   decrementMonth = () => {
-    --this._month;
+    if (this._month === 0) {
+      this._month = 11;
+      --this._year;
+    } else {
+      --this._month;
+    }
   };
 }
 
