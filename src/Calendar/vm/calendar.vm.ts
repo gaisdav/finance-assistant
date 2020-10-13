@@ -1,27 +1,23 @@
-import { observable, action, computed, runInAction } from "mobx";
+import { makeAutoObservable } from "mobx";
 
 class CalendarVM implements ICalendarVM {
-  @observable private readonly _date: number;
-  @observable private readonly _day: number;
-  @observable private _month: number;
-  @observable private readonly _year: number;
+  private readonly _date: number;
+  private readonly _day: number;
+  private _month: number;
+  private readonly _year: number;
 
-  @computed
   get year(): number {
     return this._year;
   }
 
-  @computed
   get month(): number {
     return this._month;
   }
 
-  @computed
   get date(): number {
     return this._date;
   }
 
-  @computed
   get monthString(): string {
     return new Date(this.year, this.month, this.date).toLocaleString(
       "default",
@@ -33,7 +29,6 @@ class CalendarVM implements ICalendarVM {
     );
   }
 
-  @computed
   get monthDays(): IDay[][] {
     const firstDayNumber = new Date(this.year, this.month, 0).getDay();
     let month: IDay[][] = [];
@@ -72,19 +67,16 @@ class CalendarVM implements ICalendarVM {
     this._year = dateObj.getFullYear();
     this._day = dateObj.getDay();
     this._month = dateObj.getMonth();
+
+    makeAutoObservable(this);
   }
 
-  @action.bound incrementMonth = () => {
-    runInAction(() => {
-      ++this._month;
-    });
-
-    console.log("incrementMonth", this._month);
+  incrementMonth = () => {
+    ++this._month;
   };
 
-  @action.bound decrementMonth = () => {
+  decrementMonth = () => {
     --this._month;
-    console.log("decrementMonth", this._month);
   };
 }
 
