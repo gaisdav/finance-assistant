@@ -6,16 +6,16 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  &.calendarWrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+  }
 }
 
 .balance {
   margin-bottom: $base;
-}
-
-.calendarWrapper {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 0;
-  overflow: hidden;
 }
