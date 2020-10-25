@@ -2,16 +2,14 @@ import React, { FC } from "react";
 import { observer } from "mobx-react-lite";
 
 import Week from "./components/Week";
-import { useStyles } from "./styles";
 import Card from "../../common/components/Card";
+import styles from "./styles.module.scss";
 
 interface IProps {
   calendarApi: ICalendarVM;
 }
 
 const Calendar: FC<IProps> = ({ calendarApi }) => {
-  const { monthWrapper } = useStyles();
-
   const {
     incrementMonth,
     monthString,
@@ -21,7 +19,11 @@ const Calendar: FC<IProps> = ({ calendarApi }) => {
 
   return (
     <>
-      <Card>Лимит на месяц: 20 000 руб.</Card>
+      <Card className={styles.card}>Лимит на месяц: 20 000 руб.</Card>
+      <Card className={styles.card__secondary}>
+        <div>Остаток на месяц: 15 500 руб.</div>
+        <div>Дневной остаток: 700 руб.</div>
+      </Card>
       {/*<div className={monthWrapper}>*/}
       {/*  <div>*/}
       {/*    <div onClick={incrementMonth}>туда</div>*/}
