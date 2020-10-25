@@ -14,4 +14,4 @@ class AmountService implements IAmountService {
   }
 }
 
-export default AmoutSirvice;
+export default AmountService;

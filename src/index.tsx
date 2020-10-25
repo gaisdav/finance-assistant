@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import Calendar from "./view/Calendar/ui";
-import CalendarVm from "./view/Calendar/vm/calendar.vm";
+import Calendar from "./view/pages/Main";
+import CalendarVm from "./ViewModels/Calendar/calendar.vm";
 import { configure } from "mobx";
-import DBClient from "./Modules/DBClient";
+import DBClient from "./Clients/DBClient";
 
 configure({ enforceActions: "observed" });
 

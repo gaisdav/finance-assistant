@@ -1,4 +1,4 @@
-import DBClient from "../../Modules/DBClient";
+import DBClient from "../../Clients/DBClient";
 
 class AmountRepository implements IAmountRepository {
   constructor(private dbClient: DBClient) {}
