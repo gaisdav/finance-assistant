@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 import Card from "../../common/components/Card";
 import Subtitle from "../../common/components/Subtitle";
 import Calendar from "./components/Calendar";
+import NavigatePanel from "../../common/components/NavigatePanel";
 
 interface IProps {
   calendarApi: ICalendarVM;
@@ -30,10 +31,20 @@ const Main: FC<IProps> = ({ calendarApi }) => {
       <Card className={[card, calendarWrapper]}>
         <Calendar calendarApi={calendarApi}>Calendar</Calendar>
       </Card>
-      <Card className={card}>
-        <div className={balance}>Остаток на месяц: 15 500 руб.</div>
-        <div>Дневной остаток: 700 руб.</div>
-      </Card>
+      <NavigatePanel
+        buttons={[
+          {
+            text: "Календарь",
+            active: true,
+            onClick: () => {},
+          },
+          {
+            text: "Графики",
+            active: false,
+            onClick: () => {},
+          },
+        ]}
+      />
     </>
   );
 };

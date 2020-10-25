@@ -1,0 +1,17 @@
+@import "src/view/common/styles/constants";
+
+.navigatePanel {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  overflow: hidden;
+
+  button {
+    flex: 1;
+    padding: $base-space;
+
+    &.active {
+      box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
