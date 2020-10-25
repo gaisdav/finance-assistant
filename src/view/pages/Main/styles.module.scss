@@ -1,12 +1,14 @@
+@import "src/view/common/styles/constants";
+
 .card {
-  margin-bottom: 12px;
+  margin-bottom: $base-space;
   font-weight: 500;
 
   &__secondary {
     font-weight: 400;
 
     div {
-      margin-bottom: 12px;
+      margin-bottom: $base;
 
       &:last-child {
         margin-bottom: 0;

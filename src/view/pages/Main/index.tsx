@@ -9,7 +9,7 @@ interface IProps {
   calendarApi: ICalendarVM;
 }
 
-const Calendar: FC<IProps> = ({ calendarApi }) => {
+const Main: FC<IProps> = ({ calendarApi }) => {
   const {
     incrementMonth,
     monthString,
@@ -39,4 +39,4 @@ const Calendar: FC<IProps> = ({ calendarApi }) => {
   );
 };
 
-export default observer(Calendar);
+export default observer(Main);
