@@ -10,7 +10,7 @@ interface ICalendarVM {
   year: number;
   month: number;
   date: number;
-  monthString: string;
+  monthTitle: string;
   incrementMonth: () => void;
   decrementMonth: () => void;
 }

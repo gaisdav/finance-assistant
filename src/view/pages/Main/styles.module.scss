@@ -2,21 +2,20 @@
 
 .card {
   margin-bottom: $base-space;
-  font-weight: 500;
-
-  &__secondary {
-    font-weight: 400;
-
-    div {
-      margin-bottom: $base;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
 
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.balance {
+  margin-bottom: $base;
+}
+
+.calendarWrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
 }

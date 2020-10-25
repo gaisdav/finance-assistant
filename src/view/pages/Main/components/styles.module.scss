@@ -1,0 +1,76 @@
+@import "src/view/common/styles/constants";
+
+.month {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+
+    .monthTitle {
+      padding: $base-space;
+    }
+
+    .prev,
+    .next {
+      padding: $base-space;
+    }
+  }
+
+  .weekNames {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    border-top: 1px solid $border-color;
+
+    div {
+      flex: 1;
+      text-align: center;
+      border-left: 1px solid $border-color;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+
+  .weekWrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .week {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      border-top: 1px solid $border-color;
+
+      &:last-child {
+        border-bottom: 1px solid $border-color;
+      }
+
+      .day {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid $border-color;
+
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+
+  .weekend {
+    color: red;
+  }
+
+  .today {
+    background: #88ff94;
+  }
+}

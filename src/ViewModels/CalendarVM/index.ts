@@ -18,13 +18,12 @@ class CalendarVM implements ICalendarVM {
     return this._date;
   }
 
-  get monthString(): string {
+  get monthTitle(): string {
     return new Date(this.year, this.month, this.date).toLocaleString(
       "default",
       {
         year: "numeric",
         month: "long",
-        day: "numeric",
       }
     );
   }

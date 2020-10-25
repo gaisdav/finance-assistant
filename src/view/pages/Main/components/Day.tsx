@@ -1,24 +1,22 @@
 import React, { FC } from "react";
 import { observer } from "mobx-react";
+import styles from "./styles.module.scss";
+import classNames from "classnames";
 
 interface IProps {
   day: IDay;
 }
 
 const getButtonType = (day: IDay): string => {
-  if (day.isToday) {
-    return "primary";
-  }
-
-  if (day.isWeekendDay) {
-    return "secondary";
-  }
-
-  return "default";
+  return classNames(
+    styles.day,
+    { [styles.today]: day.isToday },
+    { [styles.weekend]: day.isWeekendDay }
+  );
 };
 
 const Day: FC<IProps> = ({ day }) => {
-  return <div color={getButtonType(day)}>{day.value}</div>;
+  return <button className={getButtonType(day)}>{day.value}</button>;
 };
 
 export default observer(Day);
