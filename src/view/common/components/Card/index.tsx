@@ -2,10 +2,19 @@ import classNames from "classnames";
 import React, { FC } from "react";
 import styles from "./styles.module.scss";
 
-interface IProps {
+/**
+ * Интерфейс компонента.
+ */
+export interface IProps {
+  /**
+   * Передаваемые стили.
+   */
   className?: string | string[];
 }
 
+/**
+ * Компонент "карточка"
+ */
 const Card: FC<IProps> = ({ children, className = "" }) => {
   const classes = classNames(styles.card, className);
 

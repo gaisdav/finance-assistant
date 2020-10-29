@@ -213,10 +213,14 @@ button,
   transition: all 0.1s;
   text-decoration: none;
   user-select: none;
+}
 
-  &:active {
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.25);
-  }
+
+button:active,
+[type="button"]:active,
+[type="reset"]:active,
+[type="submit"]:active {
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.25);
 }
 
 /**

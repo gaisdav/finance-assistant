@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Card from "../Card";
 import styles from "./styles.module.scss";
 
-interface IProps {
+export interface INavigatePanelProps {
   buttons: {
     text: string;
     active: boolean;
@@ -14,7 +14,7 @@ interface IProps {
 
 const { navigatePanel, active } = styles;
 
-const NavigatePanel: FC<IProps> = ({ buttons }) => {
+const NavigatePanel: FC<INavigatePanelProps> = ({ buttons }) => {
   return (
     <Card className={navigatePanel}>
       {buttons.map((button, index) => (
