@@ -4,10 +4,19 @@ import styles from "./styles.module.scss";
 import Subtitle from "../../../common/components/Subtitle";
 import { observer } from "mobx-react";
 
+/**
+ * Интерфейс календаря.
+ */
 interface IProps {
+  /**
+   * View Model календаря
+   */
   calendarApi: ICalendarVM;
 }
 
+/**
+ * Компонент календаря.
+ */
 const Calendar: FC<IProps> = ({ calendarApi }) => {
   const { incrementMonth, monthTitle, decrementMonth, monthDays } = calendarApi;
 

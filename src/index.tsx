@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import "./view/common/styles/normalize.scss";
 import * as serviceWorker from "./serviceWorker";
 import Main from "./view/pages/Main";
 import CalendarVm from "./ViewModels/CalendarVM";
