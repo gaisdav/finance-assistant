@@ -1,5 +1,15 @@
 @import "src/view/common/styles/constants";
 
+.calendarWrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  min-height: 260px;
+  margin-bottom: $base-space;
+}
+
 .month {
   display: flex;
   flex: 1;

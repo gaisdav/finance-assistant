@@ -28,9 +28,7 @@ const Main: FC<IProps> = ({ calendarApi }) => {
         <div className={balance}>Остаток на месяц: 15 500 руб.</div>
         <div>Дневной остаток: 700 руб.</div>
       </Card>
-      <Card className={[card, calendarWrapper]}>
-        <Calendar calendarApi={calendarApi}>Calendar</Calendar>
-      </Card>
+      <Calendar calendarApi={calendarApi}>Calendar</Calendar>
       <NavigatePanel
         buttons={[
           {
