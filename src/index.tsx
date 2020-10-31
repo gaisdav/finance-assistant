@@ -5,7 +5,7 @@ import { configure } from "mobx";
 import DBClient from "./Clients/DBClient";
 import App from "./App";
 import { RouterProvider } from "react-router5";
-import { router } from "./routing/router";
+import router from "./routing/router";
 
 configure({ enforceActions: "observed" });
 

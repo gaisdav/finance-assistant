@@ -1,3 +1,11 @@
-import { Route } from "router5";
+import { IRoute } from "./interfaces";
 
-export const routes: Route[] = [{ name: "main", path: "/" }];
+export const routes: IRoute[] = [
+  {
+    name: "main",
+    path: "/",
+    onActivate: async (dependencies) => {
+      console.log("onActivate", dependencies);
+    },
+  },
+];

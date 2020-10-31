@@ -1,9 +1,14 @@
 import { createRouter } from "router5";
 import { routes } from "./routes";
+import { onActivateMiddlewareFactory } from "./middleware";
 
-export const router = createRouter(routes, {
+const router = createRouter(routes, {
   allowNotFound: true,
   queryParamsMode: "loose",
   defaultRoute: "main",
   autoCleanUp: false,
 });
+
+router.useMiddleware(onActivateMiddlewareFactory(routes));
+
+export default router;
