@@ -1,4 +1,5 @@
 import { makeAutoObservable } from "mobx";
+import { ICalendarVM, IDay } from "../../view/pages/Main/interfaces";
 
 class CalendarVM implements ICalendarVM {
   private readonly _date: number;

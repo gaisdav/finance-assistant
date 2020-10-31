@@ -1,11 +1,11 @@
-interface IDay {
+export interface IDay {
   value: number;
   isToday: boolean;
   isWeekendDay: boolean;
   isCurrentMonthDay: boolean;
 }
 
-interface ICalendarVM {
+export interface ICalendarVM {
   monthDays: IDay[][];
   year: number;
   month: number;

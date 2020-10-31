@@ -6,6 +6,7 @@ import Card from "../../common/components/Card";
 import Subtitle from "../../common/components/Subtitle";
 import Calendar from "./components/Calendar";
 import NavigationPanel from "../../common/components/NavigationPanel";
+import { ICalendarVM } from "./interfaces";
 
 interface IProps {
   calendarApi: ICalendarVM;

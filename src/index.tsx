@@ -2,19 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import { configure } from "mobx";
-import DBClient from "./Clients/DBClient";
 import App from "./App";
 import { RouterProvider } from "react-router5";
 import router from "./routing/router";
+import { clients } from "./storage/storage";
 
 configure({ enforceActions: "observed" });
 
-const dbClient: DBClient = new DBClient();
+// router.setDependencies(storage);
 
-dbClient.init().then(() => {
+clients.db.init().then(() => {
   router.start(() => {
     ReactDOM.render(
       <React.StrictMode>
+        {/*@ts-ignore*/}
         <RouterProvider router={router}>
           <App />
         </RouterProvider>

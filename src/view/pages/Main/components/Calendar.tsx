@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import Subtitle from "../../../common/components/Subtitle";
 import { observer } from "mobx-react";
 import Card from "../../../common/components/Card";
+import { ICalendarVM } from "../interfaces";
 
 /**
  * Интерфейс календаря.
