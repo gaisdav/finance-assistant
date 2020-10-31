@@ -19,6 +19,7 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router5": "^8.0.1",
     "react-scripts": "3.4.3",
     "router5": "^8.0.1",
     "serve": "^11.3.2",

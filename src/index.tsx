@@ -1,23 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
-import Main from "./view/pages/Main";
-import CalendarVm from "./ViewModels/CalendarVM";
 import { configure } from "mobx";
 import DBClient from "./Clients/DBClient";
+import App from "./App";
+import { RouterProvider } from "react-router5";
+import { router } from "./routing/router";
 
 configure({ enforceActions: "observed" });
 
-const calendarApi: ICalendarVM = new CalendarVm();
 const dbClient: DBClient = new DBClient();
 
 dbClient.init().then(() => {
-  ReactDOM.render(
-    <React.StrictMode>
-      <Main calendarApi={calendarApi} />
-    </React.StrictMode>,
-    document.getElementById("root")
-  );
+  router.start(() => {
+    ReactDOM.render(
+      <React.StrictMode>
+        <RouterProvider router={router}>
+          <App />
+        </RouterProvider>
+      </React.StrictMode>,
+      document.getElementById("root")
+    );
+  });
 });
 
 serviceWorker.register();

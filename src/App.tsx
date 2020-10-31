@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Main from "./view/pages/Main";
+import CalendarVm from "./ViewModels/CalendarVM";
+import { useRoute } from "react-router5";
+import { constants } from "router5";
+
+const calendarApi: ICalendarVM = new CalendarVm();
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const {
+    route: { name: routeName },
+  } = useRoute();
+
+  if (routeName === "main") return <Main calendarApi={calendarApi} />;
+
+  if (routeName === constants.UNKNOWN_ROUTE)
+    return <div>Страница не найдена</div>;
+
+  return <div>Страница не найдена</div>;
 }
 
 export default App;
