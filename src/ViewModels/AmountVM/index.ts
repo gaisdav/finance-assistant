@@ -4,8 +4,6 @@ import { IAmountVM } from "./interfaces";
 import { IAmountService } from "../../Services/AmountService/interfaces";
 
 class AmountVM extends BaseVM implements IAmountVM {
-  loading: boolean = false;
-
   get totalLimit(): number {
     return this.domainModel.totalLimit;
   }

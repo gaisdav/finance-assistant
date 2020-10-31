@@ -7,15 +7,13 @@ import { IStorage } from "./storage/interfaces";
 function App() {
   const {
     route: { name: routeName },
+    router,
   } = useRoute();
 
-  const { router } = useRoute();
+  const { amount, calendar }: IStorage = router.getDependencies() as IStorage;
 
-  const storage: IStorage = router.getDependencies() as IStorage;
-
-  console.log(storage);
-
-  if (routeName === "main") return <Main calendarApi={storage.calendar} />;
+  if (routeName === "main")
+    return <Main calendarApi={calendar} amountVM={amount} />;
 
   if (routeName === constants.UNKNOWN_ROUTE)
     return <div>Страница не найдена</div>;

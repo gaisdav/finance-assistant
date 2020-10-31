@@ -7,18 +7,20 @@ import Subtitle from "../../common/components/Subtitle";
 import Calendar from "./components/Calendar";
 import NavigationPanel from "../../common/components/NavigationPanel";
 import { ICalendarVM } from "./interfaces";
+import { IAmountVM } from "../../../ViewModels/AmountVM/interfaces";
 
 interface IProps {
   calendarApi: ICalendarVM;
+  amountVM: IAmountVM;
 }
 
-const Main: FC<IProps> = ({ calendarApi }) => {
+const Main: FC<IProps> = ({ calendarApi, amountVM }) => {
   const { card, balance } = styles;
 
   return (
     <>
       <Card className={card}>
-        <Subtitle>Лимит на месяц: 20 000 руб.</Subtitle>
+        <Subtitle>Лимит на месяц: {amountVM.totalLimit} руб.</Subtitle>
       </Card>
       <Card className={card}>
         <div className={balance}>Остаток на месяц: 15 500 руб.</div>

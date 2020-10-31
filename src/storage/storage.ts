@@ -6,12 +6,12 @@ import DBClient from "../Clients/DBClient";
 import { AmountDM } from "../DomainModels/AmountDM";
 import { IStorage } from "./interfaces";
 
-export const domainModels = {
-  amount: new AmountDM(),
-};
-
 export const clients = {
   db: new DBClient(),
+};
+
+export const domainModels = {
+  amount: new AmountDM(),
 };
 
 export const repositories = {
