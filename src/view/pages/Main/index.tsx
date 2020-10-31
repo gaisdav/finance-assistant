@@ -5,14 +5,14 @@ import styles from "./styles.module.scss";
 import Card from "../../common/components/Card";
 import Subtitle from "../../common/components/Subtitle";
 import Calendar from "./components/Calendar";
-import NavigatePanel from "../../common/components/NavigatePanel";
+import NavigationPanel from "../../common/components/NavigationPanel";
 
 interface IProps {
   calendarApi: ICalendarVM;
 }
 
 const Main: FC<IProps> = ({ calendarApi }) => {
-  const { card, balance, calendarWrapper } = styles;
+  const { card, balance } = styles;
 
   return (
     <>
@@ -29,7 +29,7 @@ const Main: FC<IProps> = ({ calendarApi }) => {
         <div>Дневной остаток: 700 руб.</div>
       </Card>
       <Calendar calendarApi={calendarApi}>Calendar</Calendar>
-      <NavigatePanel
+      <NavigationPanel
         buttons={[
           {
             text: "Календарь",

@@ -5,13 +5,16 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <meta name="application-name" content="Finance Assistant" />
     <meta name="apple-mobile-web-app-title" content="Finance Assistant" />
     <meta name="msapplication-starturl" content="/index.html" />
     <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo256.png" />
@@ -20,8 +23,11 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-    <link rel="stylesheet" href="%PUBLIC_URL%/styles/normalize.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/normalize.css" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -32,6 +38,36 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Finance Assistant</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+          "Droid Sans", "Helvetica Neue", sans-serif;
+        font-size: 14px;
+        background: #eeeeee;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+          monospace;
+      }
+
+      #root {
+        position: absolute;
+        display: flex;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 12px;
+        flex-direction: column;
+        overflow: auto;
+      }
+    </style>
   </head>
   <body>
     <div id="root">Загрузка...</div>

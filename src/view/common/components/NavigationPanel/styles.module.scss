@@ -1,18 +1,25 @@
 @import "src/view/common/styles/constants";
 
-.navigatePanel {
+.navigationPanel {
   display: flex;
   justify-content: space-around;
   padding: 0;
-  overflow: hidden;
 
   button {
     flex: 1;
     padding: $base-space;
     border-right: 1px solid $border-color;
 
+    &:first-child {
+      border: none;
+      border-bottom-left-radius: $base * 2;
+      border-top-left-radius: $base * 2;
+    }
+
     &:last-child {
       border: none;
+      border-bottom-right-radius: $base * 2;
+      border-top-right-radius: $base * 2;
     }
 
     &.active {
