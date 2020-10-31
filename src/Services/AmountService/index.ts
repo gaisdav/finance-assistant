@@ -1,3 +1,6 @@
+import { IAmountService } from "./interfaces";
+import { IAmountRepository } from "../../Repositories/AmountRepository/interface";
+
 class AmountService implements IAmountService {
   constructor(private repository: IAmountRepository) {}
 
