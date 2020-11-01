@@ -4,12 +4,10 @@ import * as serviceWorker from "./serviceWorker";
 import { configure } from "mobx";
 import App from "./App";
 import { RouterProvider } from "react-router5";
-import router from "./routing/router";
-import { clients } from "./storage/storage";
+import router from "./Routing/router";
+import { clients } from "./Storage/storage";
 
 configure({ enforceActions: "observed" });
-
-// router.setDependencies(storage);
 
 clients.db.init().then(() => {
   router.start(() => {

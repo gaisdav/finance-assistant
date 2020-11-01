@@ -1,8 +1,8 @@
 import React from "react";
-import Main from "./view/pages/Main";
+import Main from "./View/pages/Main";
 import { useRoute } from "react-router5";
 import { constants } from "router5";
-import { IStorage } from "./storage/interfaces";
+import { IStorage } from "./Storage/interfaces";
 
 function App() {
   const {

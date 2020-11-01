@@ -1,8 +1,8 @@
 import { createRouter } from "router5";
 import { routes } from "./routes";
 import { onActivateMiddlewareFactory } from "./middleware";
-import { IStorage } from "../storage/interfaces";
-import { storage } from "../storage/storage";
+import { IStorage } from "../Storage/interfaces";
+import { storage } from "../Storage/storage";
 
 const router = createRouter<IStorage>(
   routes,

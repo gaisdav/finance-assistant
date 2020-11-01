@@ -1,5 +1,5 @@
 import { IRoute } from "./interfaces";
-import { IStorage } from "../storage/interfaces";
+import { IStorage } from "../Storage/interfaces";
 
 export const routes: IRoute<IStorage>[] = [
   {

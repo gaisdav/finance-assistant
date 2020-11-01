@@ -2,6 +2,7 @@ import { BaseVM } from "../BaseVM";
 import { IAmountDM } from "../../DomainModels/AmountDM/interfaces";
 import { IAmountVM } from "./interfaces";
 import { IAmountService } from "../../Services/AmountService/interfaces";
+import { runInAction } from "mobx";
 
 class AmountVM extends BaseVM implements IAmountVM {
   get totalLimit(): number {
@@ -15,7 +16,9 @@ class AmountVM extends BaseVM implements IAmountVM {
   async getAmount(): Promise<void> {
     this.setLoading();
 
-    this.domainModel.totalLimit = await this.service.getAmount();
+    await runInAction(async () => {
+      this.domainModel.totalLimit = await this.service.getAmount();
+    });
 
     this.unsetLoading();
   }
