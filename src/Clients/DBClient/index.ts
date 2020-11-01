@@ -14,8 +14,9 @@ class DBClient {
 
   async init() {
     this.db = await openDB<IDB>(this.DBName, 1, {
-      upgrade: (db) => {
-        db.createObjectStore("assistantStore");
+      upgrade: async (db) => {
+        const store = db.createObjectStore("assistantStore");
+        await store.put(0, "amount");
       },
     });
   }
@@ -27,11 +28,13 @@ class DBClient {
 
     const value = await this.db.get("assistantStore", key);
 
-    if (!value) {
+    console.log(value);
+
+    if (value === void 0 || value === null) {
       throw new Error("Еhe requested field was not found");
     }
 
-    return value;
+    return value || 0;
   }
 
   async set(key: string, val: any): Promise<StoreKey<IDB, "assistantStore">> {
