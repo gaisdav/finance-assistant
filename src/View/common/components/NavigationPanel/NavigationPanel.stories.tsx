@@ -1,4 +1,3 @@
-import React from "react";
 import { INavigationPanelProps } from "./index";
 import { Story } from "@storybook/react/types-6-0";
 import NavigationPanel from "./index";

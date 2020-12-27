@@ -1,7 +1,6 @@
 import Subtitle from "./index";
 import { Story } from "@storybook/react/types-6-0";
 import { text } from "@storybook/addon-knobs";
-import React from "react";
 
 export default {
   title: "Typography/Subtitle",

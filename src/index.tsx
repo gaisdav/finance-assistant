@@ -1,4 +1,4 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import { configure } from "mobx";
@@ -12,12 +12,12 @@ configure({ enforceActions: "observed" });
 clients.db.init().then(() => {
   router.start(() => {
     ReactDOM.render(
-      <React.StrictMode>
+      <StrictMode>
         {/*@ts-ignore*/}
         <RouterProvider router={router}>
           <App />
         </RouterProvider>
-      </React.StrictMode>,
+      </StrictMode>,
       document.getElementById("root")
     );
   });

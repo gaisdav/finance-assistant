@@ -1,9 +1,8 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import styles from "./styles.module.scss";
 import { observer } from "mobx-react";
 import Card from "../../../common/components/Card";
 import { ICalendarVM } from "../interfaces";
-import MonthView from "./views/MonthView/MonthView";
 import WeekView from "./views/WeekView/WeekView";
 
 /**

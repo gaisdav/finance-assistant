@@ -1,4 +1,3 @@
-import React from "react";
 import Main from "./View/pages/Main";
 import { useRoute } from "react-router5";
 import { constants } from "router5";

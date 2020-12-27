@@ -1,4 +1,3 @@
-import React from "react";
 import Card, { IProps } from "./index";
 import { text } from "@storybook/addon-knobs";
 import { Story } from "@storybook/react/types-6-0";
