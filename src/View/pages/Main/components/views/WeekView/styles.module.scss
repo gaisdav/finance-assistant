@@ -1,0 +1,44 @@
+@import "src/View/common/styles/constants";
+
+.week {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.weekWrapper {
+  display: flex;
+  flex: 1;
+}
+
+.dayNames {
+  display: inline-flex;
+  height: 100%;
+  flex-direction: column;
+  border-right: 1px solid $border-color;
+
+  div {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-left: $base-space/2;
+    padding-right: $base-space/2;
+    border-top: 1px solid $border-color;
+  }
+}
+
+.days {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-left: $base-space/2;
+    padding-right: $base-space/2;
+    border-top: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+  }
+}

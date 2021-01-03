@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { observer } from "mobx-react";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
-import { IDay } from "../interfaces";
+import { IDay } from "../../../interfaces";
 
 interface IProps {
   day: IDay;

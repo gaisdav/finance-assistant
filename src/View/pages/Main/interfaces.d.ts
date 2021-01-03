@@ -6,6 +6,7 @@ export interface IDay {
 }
 
 export interface ICalendarVM {
+  weekDays: IDay[][];
   monthDays: IDay[][];
   year: number;
   month: number;

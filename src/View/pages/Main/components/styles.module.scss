@@ -10,74 +10,24 @@
   margin-bottom: $base-space;
 }
 
-.month {
+.controls {
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  justify-content: space-between;
 
-  .controls {
-    display: flex;
-    justify-content: space-between;
-
-    .monthTitle {
-      padding: $base-space;
-    }
-
-    .prev,
-    .next {
-      padding: $base-space;
-    }
+  .monthTitle {
+    padding: $base-space;
   }
 
-  .weekNames {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid $border-color;
-    font-size: 0.9em;
-
-    div {
-      flex: 1;
-      text-align: center;
-      border-left: 1px solid $border-color;
-
-      &:first-child {
-        border-left: none;
-      }
-    }
+  .prev,
+  .next {
+    padding: $base-space;
   }
+}
 
-  .weekWrapper {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-between;
+.weekend {
+  color: red;
+}
 
-    .week {
-      display: flex;
-      flex: 1;
-      justify-content: space-between;
-      border-top: 1px solid $border-color;
-
-      .day {
-        display: flex;
-        font-size: 0.9em;
-        flex: 1;
-        justify-content: center;
-        align-items: center;
-        border-left: 1px solid $border-color;
-
-        &:first-child {
-          border-left: none;
-        }
-      }
-    }
-  }
-
-  .weekend {
-    color: red;
-  }
-
-  .today {
-    background: #88ff94;
-  }
+.today {
+  background: #88ff94;
 }

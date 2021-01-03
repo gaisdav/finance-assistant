@@ -1,0 +1,51 @@
+@import "src/View/common/styles/constants";
+
+.month {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  .weekNames {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $border-color;
+    font-size: 0.9em;
+
+    div {
+      flex: 1;
+      text-align: center;
+      border-left: 1px solid $border-color;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+
+  .weekWrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .week {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      border-top: 1px solid $border-color;
+
+      .day {
+        display: flex;
+        font-size: 0.9em;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid $border-color;
+
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+}

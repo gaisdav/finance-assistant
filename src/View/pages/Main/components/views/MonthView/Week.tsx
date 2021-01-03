@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 
 import Day from "./Day";
 import styles from "./styles.module.scss";
-import { IDay } from "../interfaces";
+import { IDay } from "../../../interfaces";
 
 interface IProps {
   week: IDay[];

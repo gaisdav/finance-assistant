@@ -42,7 +42,42 @@ class CalendarVM implements ICalendarVM {
 
         const isCurrentMonthDay = currDate.getMonth() === this.month;
 
-        const isToday = currDate.getDate() === this.date && isCurrentMonthDay;
+        const isToday =
+          currDate.getDate() === this.date &&
+          new Date().getMonth() === this.month;
+
+        weekArray.push({
+          value: currDate.getDate(),
+          isToday,
+          isCurrentMonthDay,
+          isWeekendDay: day > 4,
+        });
+
+        date++;
+      }
+
+      month.push(weekArray);
+    }
+
+    return month;
+  }
+
+  get weekDays(): IDay[][] {
+    const firstDayNumber = new Date(this.year, this.month, 0).getDay();
+    let month: IDay[][] = [];
+    let date: number = 1 - firstDayNumber;
+
+    for (let week = 0; week < 6; week++) {
+      let weekArray = [];
+
+      for (let day = 0; day < 7; day++) {
+        const currDate = new Date(this.year, this.month, date);
+
+        const isCurrentMonthDay = currDate.getMonth() === this.month;
+
+        const isToday =
+          currDate.getDate() === this.date &&
+          new Date().getMonth() === this.month;
 
         weekArray.push({
           value: currDate.getDate(),
