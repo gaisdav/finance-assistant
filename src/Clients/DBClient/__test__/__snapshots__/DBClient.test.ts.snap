@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DBClient снимок 1`] = `
+Object {
+  "_closePending": false,
+  "_closed": false,
+  "_rawDatabase": Database {
+    "connections": Array [
+      FDBDatabase {
+        "_closePending": false,
+        "_closed": false,
+        "_rawDatabase": [Circular],
+        "_runningVersionchangeTransaction": false,
+        "listeners": Array [],
+        "name": "Finance Assistant",
+        "objectStoreNames": Array [
+          "amountStore",
+        ],
+        "version": 1,
+      },
+    ],
+    "deletePending": false,
+    "name": "Finance Assistant",
+    "processTransactions": [Function],
+    "rawObjectStores": Map {
+      "amountStore" => ObjectStore {
+        "autoIncrement": false,
+        "deleted": false,
+        "keyGenerator": null,
+        "keyPath": null,
+        "name": "amountStore",
+        "rawDatabase": [Circular],
+        "rawIndexes": Map {},
+        "records": RecordStore {
+          "records": Array [],
+        },
+      },
+    },
+    "transactions": Array [
+      FDBTransaction {
+        "_objectStoresCache": Map {
+          "amountStore" => FDBObjectStore {
+            "_indexesCache": Map {},
+            "_name": "amountStore",
+            "_rawObjectStore": ObjectStore {
+              "autoIncrement": false,
+              "deleted": false,
+              "keyGenerator": null,
+              "keyPath": null,
+              "name": "amountStore",
+              "rawDatabase": [Circular],
+              "rawIndexes": Map {},
+              "records": RecordStore {
+                "records": Array [],
+              },
+            },
+            "autoIncrement": false,
+            "indexNames": Array [],
+            "keyPath": null,
+            "transaction": [Circular],
+          },
+        },
+        "_requests": Array [],
+        "_rollbackLog": Array [
+          [Function],
+          [Function],
+        ],
+        "_scope": Set {
+          "amountStore",
+        },
+        "_started": true,
+        "_state": "finished",
+        "db": FDBDatabase {
+          "_closePending": false,
+          "_closed": false,
+          "_rawDatabase": [Circular],
+          "_runningVersionchangeTransaction": false,
+          "listeners": Array [],
+          "name": "Finance Assistant",
+          "objectStoreNames": Array [
+            "amountStore",
+          ],
+          "version": 1,
+        },
+        "error": null,
+        "listeners": Array [
+          Object {
+            "callback": [Function],
+            "capture": false,
+            "type": "error",
+          },
+          Object {
+            "callback": [Function],
+            "capture": false,
+            "type": "abort",
+          },
+          Object {
+            "callback": [Function],
+            "capture": false,
+            "type": "complete",
+          },
+          Object {
+            "callback": [Function],
+            "capture": false,
+            "type": "complete",
+          },
+          Object {
+            "callback": [Function],
+            "capture": false,
+            "type": "abort",
+          },
+        ],
+        "mode": "versionchange",
+        "objectStoreNames": Array [
+          "amountStore",
+        ],
+        "onabort": null,
+        "oncomplete": null,
+        "onerror": null,
+      },
+    ],
+    "version": 1,
+  },
+  "_runningVersionchangeTransaction": false,
+  "listeners": Array [],
+  "name": "Finance Assistant",
+  "objectStoreNames": Array [
+    "amountStore",
+  ],
+  "version": 1,
+}
+`;

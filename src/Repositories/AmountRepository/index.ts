@@ -6,18 +6,18 @@ class AmountRepository implements IAmountRepository {
   constructor(private dbClient: DBClient) {}
 
   async getAmount(amountType: keyof IAmountDM): Promise<number | null> {
-    return await this.dbClient.get(amountType);
+    return await this.dbClient.get("amountStore", amountType);
   }
 
   async setAmount(
     amountType: keyof IAmountDM,
     amount: number
   ): Promise<string> {
-    return await this.dbClient.set(amountType, amount);
+    return await this.dbClient.set("amountStore", amountType, amount);
   }
 
   async deleteAmount(amountType: keyof IAmountDM): Promise<void> {
-    await this.dbClient.delete(amountType);
+    await this.dbClient.delete("amountStore", amountType);
   }
 }
 

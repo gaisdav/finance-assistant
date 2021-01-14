@@ -1,47 +1,52 @@
-import { DBSchema, deleteDB, openDB } from "idb";
+import { deleteDB, openDB } from "idb";
 import { IDBPDatabase, StoreKey, StoreValue } from "idb/build/esm/entry";
-
-export interface IDB extends DBSchema {
-  amountStore: {
-    key: string;
-    value: number;
-  };
-}
+import { IDB, IDBClientStoragesConfig, TStoreNames } from "./interfaces";
 
 class DBClient {
   db: IDBPDatabase<IDB> | null = null;
-  private DBName: string = "assistant";
+  private DBName: string = "Finance Assistant";
+
+  constructor(private configs: IDBClientStoragesConfig[]) {}
 
   async init() {
     this.db = await openDB<IDB>(this.DBName, 1, {
       upgrade: async (db) => {
-        db.createObjectStore("amountStore");
+        this.configs.forEach((storage) => {
+          db.createObjectStore(storage.storageName);
+        });
       },
     });
   }
 
-  async get(key: string): Promise<StoreValue<IDB, "amountStore"> | null> {
+  async get(
+    storeName: TStoreNames,
+    key: string
+  ): Promise<StoreValue<IDB, TStoreNames> | null> {
     if (!this.db) {
       throw new Error("DB is not initialized");
     }
 
-    return (await this.db.get("amountStore", key)) || null;
+    return (await this.db.get(storeName, key)) || null;
   }
 
-  async set(key: string, val: any): Promise<StoreKey<IDB, "amountStore">> {
+  async set(
+    storeName: TStoreNames,
+    key: string,
+    val: any
+  ): Promise<StoreKey<IDB, TStoreNames>> {
     if (!this.db) {
       throw new Error("DB is not initialized");
     }
 
-    return this.db.put("amountStore", val, key);
+    return this.db.put(storeName, val, key);
   }
 
-  async delete(key: string): Promise<void> {
+  async delete(storeName: TStoreNames, key: string): Promise<void> {
     if (!this.db) {
       throw new Error("DB is not initialized");
     }
 
-    return this.db.delete("amountStore", key);
+    await this.db.delete(storeName, key);
   }
 
   async dismiss() {

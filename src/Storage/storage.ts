@@ -5,9 +5,10 @@ import AmountRepository from "../Repositories/AmountRepository";
 import DBClient from "../Clients/DBClient";
 import { AmountDM } from "../DomainModels/AmountDM";
 import { IStorage } from "./interfaces";
+import idbStoragesConfigs from "../Clients/DBClient/config";
 
 export const clients = {
-  db: new DBClient(),
+  db: new DBClient(idbStoragesConfigs),
 };
 
 export const domainModels = {
