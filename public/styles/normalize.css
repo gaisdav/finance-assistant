@@ -213,6 +213,7 @@ button,
   transition: all 0.1s;
   text-decoration: none;
   user-select: none;
+  cursor: pointer;
 }
 
 

@@ -14,13 +14,13 @@ interface IProps {
   amountVM: IAmountVM;
 }
 
-const Main: FC<IProps> = ({ calendarApi, amountVM }) => {
+const Main: FC<IProps> = ({ calendarApi, amountVM: { totalLimit } }) => {
   const { card, balance } = styles;
 
   return (
     <>
       <Card className={card}>
-        <Subtitle>Лимит на месяц: {amountVM.totalLimit} руб.</Subtitle>
+        <Subtitle>Лимит на месяц: {totalLimit}</Subtitle>
       </Card>
       <Card className={card}>
         <div className={balance}>Остаток на месяц: 15 500 руб.</div>

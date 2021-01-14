@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { observer } from "mobx-react";
+import { Observer } from "mobx-react-lite";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 import { IDay } from "../../../interfaces";
@@ -17,7 +17,11 @@ const getButtonType = (day: IDay): string => {
 };
 
 const Day: FC<IProps> = ({ day }) => {
-  return <button className={getButtonType(day)}>{day.value}</button>;
+  return (
+    <Observer>
+      {() => <button className={getButtonType(day)}>{day.value}</button>}
+    </Observer>
+  );
 };
 
-export default observer(Day);
+export default Day;

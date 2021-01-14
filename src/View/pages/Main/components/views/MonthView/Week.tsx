@@ -1,6 +1,5 @@
 import { FC } from "react";
-import { observer } from "mobx-react";
-
+import { Observer } from "mobx-react-lite";
 import Day from "./Day";
 import styles from "./styles.module.scss";
 import { IDay } from "../../../interfaces";
@@ -11,12 +10,16 @@ interface IProps {
 
 const Week: FC<IProps> = ({ week }) => {
   return (
-    <div className={styles.week}>
-      {week.map((date, index) => (
-        <Day key={index} day={date} />
-      ))}
-    </div>
+    <Observer>
+      {() => (
+        <div className={styles.week}>
+          {week.map((date, index) => (
+            <Day key={index} day={date} />
+          ))}
+        </div>
+      )}
+    </Observer>
   );
 };
 
-export default observer(Week);
+export default Week;

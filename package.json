@@ -13,14 +13,13 @@
     "@types/react-dom": "^16.9.0",
     "classnames": "^2.2.6",
     "idb": "^5.0.7",
-    "mobx": "^6.0.0",
-    "mobx-react": "^7.0.0",
-    "mobx-react-lite": "^3.0.0",
+    "mobx": "^6.0.4",
+    "mobx-react-lite": "^3.1.6",
     "node-sass": "^4.14.1",
     "react": "17.0.0",
     "react-dom": "17.0.0",
     "react-router5": "^8.0.1",
-    "react-scripts": "3.4.3",
+    "react-scripts": "4.0.1",
     "router5": "^8.0.1",
     "serve": "^11.3.2",
     "typescript": "^4.0.3"
@@ -59,7 +58,6 @@
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.27",
     "@types/classnames": "^2.2.10",
-    "babel-loader": "^8.1.0",
     "prettier": "^2.1.2",
     "react-is": "^17.0.1"
   }

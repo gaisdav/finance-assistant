@@ -116,6 +116,7 @@ class CalendarVM implements ICalendarVM {
   };
 
   decrementMonth = () => {
+    console.log("asdf");
     if (this._month === 0) {
       this._month = 11;
       --this._year;

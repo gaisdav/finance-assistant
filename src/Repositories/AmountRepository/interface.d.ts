@@ -1,5 +1,7 @@
+import { IAmountDM } from "../../DomainModels/AmountDM/interfaces";
+
 export interface IAmountRepository {
-  getAmount: () => Promise<number>;
-  setAmount: (amount: number) => Promise<string>;
-  deleteAmount: () => Promise<void>;
+  getAmount: (amountType: keyof IAmountDM) => Promise<number | null>;
+  setAmount: (amountType: keyof IAmountDM, amount: number) => Promise<string>;
+  deleteAmount: (amountType: keyof IAmountDM) => Promise<void>;
 }

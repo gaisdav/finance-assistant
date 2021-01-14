@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styles from "./styles.module.scss";
-import { observer } from "mobx-react";
+import Subtitle from "../../../common/components/Subtitle";
+import { Observer } from "mobx-react-lite";
 import Card from "../../../common/components/Card";
 import { ICalendarVM } from "../interfaces";
 import WeekView from "./views/WeekView/WeekView";
@@ -27,4 +28,4 @@ const Calendar: FC<IProps> = ({ calendarApi }) => {
   );
 };
 
-export default observer(Calendar);
+export default Calendar;
