@@ -43,11 +43,6 @@ describe("DBClient", () => {
   });
 
   describe("dismiss", () => {
-    it("должен очистить IndexedDB", async () => {
-      expect.hasAssertions();
-      // await db.set(STORE_NAME, TEST_KEY, TEST_VAL);
-      await db.dismiss();
-      expect(db.db).toMatchInlineSnapshot();
-    });
+    it.todo("должен очистить IndexedDB");
   });
 });

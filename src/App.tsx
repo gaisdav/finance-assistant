@@ -9,6 +9,7 @@ function App() {
     router,
   } = useRoute();
 
+  // TODO вынести в хук
   const { amount, calendar }: IStorage = router.getDependencies() as IStorage;
 
   if (routeName === "main")

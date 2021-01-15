@@ -1,4 +1,4 @@
-import { deleteDB, openDB } from "idb";
+import { openDB } from "idb";
 import { IDBPDatabase, StoreKey, StoreValue } from "idb/build/esm/entry";
 import { IDB, IDBClientStoragesConfig, TStoreNames } from "./interfaces";
 
@@ -49,11 +49,11 @@ class DBClient {
     await this.db.delete(storeName, key);
   }
 
-  async dismiss() {
-    await deleteDB(this.DBName, {
-      blocked() {},
-    });
-  }
+  // async dismiss() {
+  //   await deleteDB(this.DBName, {
+  //     blocked() {},
+  //   });
+  // }
 }
 
 export default DBClient;

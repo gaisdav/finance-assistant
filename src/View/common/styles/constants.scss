@@ -1,4 +1,20 @@
+:root {
+  --border-color: #d6d6d6;
+  --text-color: #000000;
+  --card-bg: #fff;
+  --body-bg: #eeeeee
+}
+
+:root[data-theme='dark'] {
+  --card-bg: #2f2f2f;
+  --body-bg: #000000;
+  --text-color: #ffffff;
+}
+
+
 $base: 4px;
 $base-space: $base * 3;
 
-$border-color: #d6d6d6;
+$border-color: var(--border-color);
+$card-bg-color: var(--card-bg);
+$body-bg: var(body-bg);
