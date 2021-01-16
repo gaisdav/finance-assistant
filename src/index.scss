@@ -1,0 +1,10 @@
+@import "src/View/common/styles/constants";
+
+#root {
+  color: $text-color;
+  background: $body-bg;
+
+  button {
+    color: $text-color;
+  }
+}
