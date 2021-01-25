@@ -5,19 +5,29 @@ import { IAmountDM } from "../../DomainModels/AmountDM/interfaces";
 class AmountRepository implements IAmountRepository {
   constructor(private dbClient: DBClient) {}
 
-  async getAmount(amountType: keyof IAmountDM): Promise<number | null> {
-    return await this.dbClient.get("amountStore", amountType);
+  async getAmount(): Promise<IAmountDM> {
+    if (!this.dbClient.db) {
+      throw new Error("DB is not initialized");
+    }
+
+    const amountStore = await this.dbClient.db.get(
+      "amountStore",
+      "amountStore"
+    );
+
+    if (!amountStore) {
+      throw new Error("amountStore is not initialized");
+    }
+
+    return amountStore;
   }
 
-  async setAmount(
-    amountType: keyof IAmountDM,
-    amount: number
-  ): Promise<string> {
-    return await this.dbClient.set("amountStore", amountType, amount);
-  }
+  async setAmount(structure: IAmountDM): Promise<string> {
+    if (!this.dbClient.db) {
+      throw new Error("DB is not initialized");
+    }
 
-  async deleteAmount(amountType: keyof IAmountDM): Promise<void> {
-    await this.dbClient.delete("amountStore", amountType);
+    return await this.dbClient.db.put("amountStore", structure, "amountStore");
   }
 }
 

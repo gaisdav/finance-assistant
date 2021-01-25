@@ -1,10 +1,10 @@
 import { FC } from "react";
 import styles from "./styles.module.scss";
-import Subtitle from "../../../common/components/Subtitle";
 import { Observer } from "mobx-react-lite";
 import Card from "../../../common/components/Card";
 import { ICalendarVM } from "../interfaces";
-import WeekView from "./views/WeekView/WeekView";
+// import WeekView from "./views/WeekView/WeekView";
+import MonthView from "./views/MonthView/MonthView";
 
 /**
  * Интерфейс календаря.
@@ -21,10 +21,14 @@ interface IProps {
  */
 const Calendar: FC<IProps> = ({ calendarApi }) => {
   return (
-    <Card className={styles.calendarWrapper}>
-      {/*<MonthView calendarApi={calendarApi} />*/}
-      <WeekView calendarApi={calendarApi} />
-    </Card>
+    <Observer>
+      {() => (
+        <Card className={styles.calendarWrapper}>
+          <MonthView calendarApi={calendarApi} />
+          {/*<WeekView calendarApi={calendarApi} />*/}
+        </Card>
+      )}
+    </Observer>
   );
 };
 

@@ -1,59 +1,28 @@
 import { openDB } from "idb";
-import { IDBPDatabase, StoreKey, StoreValue } from "idb/build/esm/entry";
-import { IDB, IDBClientStoragesConfig, TStoreNames } from "./interfaces";
+import { IDBPDatabase } from "idb/build/esm/entry";
+import { IDB } from "./interfaces";
+import { AppSettingsDM } from "../../DomainModels/AppSettingsDM";
+import { AmountDM } from "../../DomainModels/AmountDM";
 
 class DBClient {
   db: IDBPDatabase<IDB> | null = null;
   private DBName: string = "Finance Assistant";
 
-  constructor(private configs: IDBClientStoragesConfig[]) {}
-
   async init() {
     this.db = await openDB<IDB>(this.DBName, 1, {
-      upgrade: async (db) => {
-        this.configs.forEach((storage) => {
-          db.createObjectStore(storage.storageName);
-        });
+      upgrade: async (db, oldVersion, newVersion) => {
+        if (newVersion) {
+          if (oldVersion < 2) {
+            const amountStore = await db.createObjectStore("amountStore");
+            await amountStore.add(new AmountDM(), "amountStore");
+
+            const appSettingsStore = await db.createObjectStore("appSettings");
+            await appSettingsStore.add(new AppSettingsDM(), "appSettings");
+          }
+        }
       },
     });
   }
-
-  async get(
-    storeName: TStoreNames,
-    key: string
-  ): Promise<StoreValue<IDB, TStoreNames> | null> {
-    if (!this.db) {
-      throw new Error("DB is not initialized");
-    }
-
-    return (await this.db.get(storeName, key)) || null;
-  }
-
-  async set(
-    storeName: TStoreNames,
-    key: string,
-    val: any
-  ): Promise<StoreKey<IDB, TStoreNames>> {
-    if (!this.db) {
-      throw new Error("DB is not initialized");
-    }
-
-    return this.db.put(storeName, val, key);
-  }
-
-  async delete(storeName: TStoreNames, key: string): Promise<void> {
-    if (!this.db) {
-      throw new Error("DB is not initialized");
-    }
-
-    await this.db.delete(storeName, key);
-  }
-
-  // async dismiss() {
-  //   await deleteDB(this.DBName, {
-  //     blocked() {},
-  //   });
-  // }
 }
 
 export default DBClient;

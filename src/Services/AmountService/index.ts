@@ -5,19 +5,21 @@ import { IAmountDM } from "../../DomainModels/AmountDM/interfaces";
 class AmountService implements IAmountService {
   constructor(private repository: IAmountRepository) {}
 
-  async getAmount(amountType: keyof IAmountDM): Promise<number | null> {
+  async getAmount(amountType: keyof IAmountDM): Promise<IAmountDM> {
     return await this.repository.getAmount(amountType);
   }
 
   async setAmount(
-    amountType: keyof IAmountDM,
-    amount: number
-  ): Promise<string> {
-    return await this.repository.setAmount(amountType, amount);
-  }
+    params: Partial<IAmountDM>,
+    dm: IAmountDM
+  ): Promise<IAmountDM> {
+    const newStructure = {
+      ...dm,
+      ...params,
+    };
+    await this.repository.setAmount(newStructure);
 
-  async deleteAmount(amountType: keyof IAmountDM): Promise<void> {
-    return await this.repository.deleteAmount(amountType);
+    return newStructure;
   }
 }
 

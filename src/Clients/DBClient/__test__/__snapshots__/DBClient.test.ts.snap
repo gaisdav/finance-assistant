@@ -15,6 +15,7 @@ Object {
         "name": "Finance Assistant",
         "objectStoreNames": Array [
           "amountStore",
+          "appSettings",
         ],
         "version": 1,
       },
@@ -33,6 +34,27 @@ Object {
         "rawIndexes": Map {},
         "records": RecordStore {
           "records": Array [],
+        },
+      },
+      "appSettings" => ObjectStore {
+        "autoIncrement": false,
+        "deleted": false,
+        "keyGenerator": null,
+        "keyPath": null,
+        "name": "appSettings",
+        "rawDatabase": [Circular],
+        "rawIndexes": Map {},
+        "records": RecordStore {
+          "records": Array [
+            Object {
+              "key": "notifications",
+              "value": false,
+            },
+            Object {
+              "key": "theme",
+              "value": "light",
+            },
+          ],
         },
       },
     },
@@ -59,14 +81,47 @@ Object {
             "keyPath": null,
             "transaction": [Circular],
           },
+          "appSettings" => FDBObjectStore {
+            "_indexesCache": Map {},
+            "_name": "appSettings",
+            "_rawObjectStore": ObjectStore {
+              "autoIncrement": false,
+              "deleted": false,
+              "keyGenerator": null,
+              "keyPath": null,
+              "name": "appSettings",
+              "rawDatabase": [Circular],
+              "rawIndexes": Map {},
+              "records": RecordStore {
+                "records": Array [
+                  Object {
+                    "key": "notifications",
+                    "value": false,
+                  },
+                  Object {
+                    "key": "theme",
+                    "value": "light",
+                  },
+                ],
+              },
+            },
+            "autoIncrement": false,
+            "indexNames": Array [],
+            "keyPath": null,
+            "transaction": [Circular],
+          },
         },
         "_requests": Array [],
         "_rollbackLog": Array [
           [Function],
           [Function],
+          [Function],
+          [Function],
+          [Function],
         ],
         "_scope": Set {
           "amountStore",
+          "appSettings",
         },
         "_started": true,
         "_state": "finished",
@@ -79,6 +134,7 @@ Object {
           "name": "Finance Assistant",
           "objectStoreNames": Array [
             "amountStore",
+            "appSettings",
           ],
           "version": 1,
         },
@@ -113,6 +169,7 @@ Object {
         "mode": "versionchange",
         "objectStoreNames": Array [
           "amountStore",
+          "appSettings",
         ],
         "onabort": null,
         "oncomplete": null,
@@ -126,6 +183,7 @@ Object {
   "name": "Finance Assistant",
   "objectStoreNames": Array [
     "amountStore",
+    "appSettings",
   ],
   "version": 1,
 }

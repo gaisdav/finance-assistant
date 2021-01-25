@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="theme-color" content="#252525">
+    <meta name="color-scheme" content="dark" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -25,96 +27,12 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     />
     <link rel="stylesheet" href="%PUBLIC_URL%/styles/normalize.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/index.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/constants.css">
 
     <title>Finance Assistant</title>
-
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-          "Droid Sans", "Helvetica Neue", sans-serif;
-        font-size: 14px;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      code {
-        font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-          monospace;
-      }
-
-      #root {
-        position: absolute;
-        display: flex;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        padding: 12px;
-        flex-direction: column;
-        overflow: auto;
-      }
-    </style>
-    <style>
-      .loading-dots {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate3d(-50%, -50%, 0);
-        text-align: center;
-        animation-name: fadeIn;
-        animation-duration: 0.3s;
-        animation-timing-function: ease-in-out;
-      }
-
-      .dot {
-        display: inline-block;
-        height: 10px;
-        width: 10px;
-        margin-right: 6px;
-        background-color: #3d4977;
-        border-radius: 50%;
-        animation-name: linearLoading;
-        animation-duration: 1500ms;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-      }
-
-      .second-dots {
-        animation-delay: 500ms;
-      }
-
-      .third-dots {
-        animation-delay: 1000ms;
-      }
-
-      @keyframes linearLoading {
-        0% {
-          opacity: 0.4;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1.5);
-        }
-        100% {
-          opacity: 0.4;
-          transform: scale(1);
-        }
-      }
-
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-    </style>
   </head>
-  <body>
+  <body data-theme="light">
     <div id="root">
       <div class="loading-dots">
         <div class="dot first-dots"></div>

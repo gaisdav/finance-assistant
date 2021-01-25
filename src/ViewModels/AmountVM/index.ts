@@ -6,7 +6,7 @@ import { runInAction } from "mobx";
 
 class AmountVM extends BaseVM implements IAmountVM {
   get totalLimit(): string {
-    const { totalLimit } = this.domainModel;
+    const totalLimit = this.domainModel.totalLimit;
 
     return totalLimit ? `${totalLimit} руб.` : "не указан";
   }
@@ -19,18 +19,15 @@ class AmountVM extends BaseVM implements IAmountVM {
     this.setLoading();
 
     await runInAction(async () => {
-      this.domainModel.totalLimit = await this.service.getAmount("totalLimit");
+      this.domainModel = await this.service.getAmount("totalLimit");
     });
 
     this.unsetLoading();
   }
 
-  async setAmount(amount: number): Promise<string> {
-    return await this.service.setAmount("totalLimit", amount);
-  }
-
-  async deleteAmount(): Promise<void> {
-    return this.service.deleteAmount("totalLimit");
+  async setAmount(amount: number): Promise<IAmountDM> {
+    const structure = {};
+    return await this.service.setAmount(structure, this.domainModel);
   }
 }
 

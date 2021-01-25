@@ -1,3 +1,3 @@
 export interface IAmountDM {
-  totalLimit: number | null;
+  totalLimit: number;
 }
