@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Observer } from "mobx-react-lite";
 import styles from "./styles.module.scss";
+import commonStyles from "../../styles.module.scss";
 import classNames from "classnames";
 import { IDay } from "../../../interfaces";
 
@@ -11,8 +12,8 @@ interface IProps {
 const getButtonType = (day: IDay): string => {
   return classNames(
     styles.day,
-    { [styles.today]: day.isToday },
-    { [styles.weekend]: day.isWeekendDay }
+    { [commonStyles.today]: day.isToday },
+    { [commonStyles.weekend]: day.isWeekendDay }
   );
 };
 

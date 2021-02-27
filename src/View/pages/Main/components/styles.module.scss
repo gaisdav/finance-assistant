@@ -25,9 +25,10 @@
 }
 
 .weekend {
-  color: red;
+  color: $error-color;
+
 }
 
 .today {
-  background: #88ff94;
+  background: $main-color;
 }
