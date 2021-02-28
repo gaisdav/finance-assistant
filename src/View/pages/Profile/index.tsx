@@ -2,13 +2,14 @@ import { FC } from "react";
 import Card from "../../common/components/Card";
 import Subtitle from "../../common/components/Subtitle";
 
-const Profile: FC = () => {
+export interface IProps {
+  name: string;
+}
+
+const Profile: FC<IProps> = ({ name }) => {
   return (
     <Card>
-      <Subtitle>Имя</Subtitle>
-      <input type="text" placeholder="Введите имя" />
-      <Subtitle>Фамилия</Subtitle>
-      <input type="text" placeholder="Введите фамилию" />
+      <Subtitle>{name}</Subtitle>
     </Card>
   );
 };
