@@ -6,7 +6,6 @@ import App from "./App";
 import { RouterProvider } from "react-router5";
 import router from "./Routing/router";
 import { clients, repositories } from "./Storage/storage";
-import "./index.scss";
 
 configure({ enforceActions: "observed" });
 
