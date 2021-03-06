@@ -1,7 +1,7 @@
 import { BaseVM } from "../BaseVM";
 import { IAmountDM } from "../../DomainModels/AmountDM/interfaces";
 import { IAmountVM } from "./interfaces";
-import { IAmountService } from "../../Services/AmountService/interfaces";
+import { IAmountService } from "../../UseCases/AmountService/interfaces";
 import { runInAction } from "mobx";
 
 class AmountVM extends BaseVM implements IAmountVM {

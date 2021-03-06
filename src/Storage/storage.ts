@@ -1,12 +1,14 @@
 import AmountVM from "../ViewModels/AmountVM";
 import CalendarVM from "../ViewModels/CalendarVM";
-import AmountService from "../Services/AmountService";
+import AmountService from "../UseCases/AmountService";
 import AmountRepository from "../Repositories/AmountRepository";
 import DBClient from "../Clients/DBClient";
 import { AmountDM } from "../DomainModels/AmountDM";
 import { IStorage } from "./interfaces";
 import { AppSettingsRepository } from "../Repositories/AppSettingsRepository";
 import { CalendarDM } from "../DomainModels/CalendarDM";
+
+// TODO singleton ???
 
 export const clients = {
   db: new DBClient(),
