@@ -1,7 +1,9 @@
 import { IUserVM } from "./interfaces";
 import { TAppTheme, IUserDM } from "../../DomainModels/UserDM/interfaces";
+import { BaseVM } from "../BaseVM";
+import { IUserUseCase } from "../../UseCases/UserUseCase/interfaces";
 
-export class UserVM implements IUserVM {
+export class UserVM extends BaseVM implements IUserVM {
   get id(): string {
     return this.userDm.id;
   }
@@ -22,5 +24,15 @@ export class UserVM implements IUserVM {
     return this.userDm.theme;
   }
 
-  constructor(private userDm: IUserDM) {}
+  constructor(private userDm: IUserDM, private useCase: IUserUseCase) {
+    super();
+  }
+
+  async getUser(): Promise<void> {
+    this.setLoading();
+
+    await this.useCase.getUser();
+
+    this.unsetLoading();
+  }
 }

@@ -6,4 +6,6 @@ export interface IUserVM {
   lastName: string;
   fullName: string;
   theme: TAppTheme;
+
+  getUser: () => Promise<void>;
 }
