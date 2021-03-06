@@ -8,7 +8,7 @@ import { IStorage } from "./interfaces";
 import { AppSettingsRepository } from "../Repositories/AppSettingsRepository";
 import { CalendarDM } from "../DomainModels/CalendarDM";
 
-// TODO singleton ???
+// TODO rewrite to singleton ???
 
 export const clients = {
   db: new DBClient(),
