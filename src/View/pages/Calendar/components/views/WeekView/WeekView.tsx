@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const WeekView: FC<IProps> = ({ calendarApi }) => {
-  const { incrementMonth, monthTitle, decrementMonth, weekDays } = calendarApi;
+  const { incrementMonth, monthTitle, decrementMonth } = calendarApi;
 
   return (
     <Observer>

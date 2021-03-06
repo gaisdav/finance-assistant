@@ -1,22 +1,30 @@
 import { makeAutoObservable } from "mobx";
-import { ICalendarVM, IDay } from "../../View/pages/Main/interfaces";
+import { ICalendarVM, IDay } from "../../View/pages/Calendar/interfaces";
+import { ICalendarDM } from "../../DomainModels/CalendarDM/interfaces";
 
 class CalendarVM implements ICalendarVM {
-  private readonly _date: number;
-  private readonly _day: number;
-  private _month: number;
-  private _year: number;
-
   get year(): number {
-    return this._year;
+    return this.domainModel.year;
   }
 
   get month(): number {
-    return this._month;
+    return this.domainModel.month;
   }
 
   get date(): number {
-    return this._date;
+    return this.domainModel.date;
+  }
+
+  get currentYear(): number {
+    return this.domainModel.currentYear;
+  }
+
+  get currentMonth(): number {
+    return this.domainModel.currentMonth;
+  }
+
+  get currentDate(): number {
+    return this.domainModel.currentDate;
   }
 
   get monthTitle(): string {
@@ -44,7 +52,7 @@ class CalendarVM implements ICalendarVM {
 
         const isToday =
           currDate.getDate() === this.date &&
-          new Date().getMonth() === this.month;
+          currDate.getMonth() === this.currentMonth;
 
         weekArray.push({
           value: currDate.getDate(),
@@ -62,65 +70,59 @@ class CalendarVM implements ICalendarVM {
     return month;
   }
 
-  get weekDays(): IDay[][] {
-    const firstDayNumber = new Date(this.year, this.month, 0).getDay();
-    let month: IDay[][] = [];
-    let date: number = 1 - firstDayNumber;
+  // TODO доделать
+  // get weekDays(): IDay[][] {
+  //   const firstDayNumber = new Date(this.year, this.month, 0).getDay();
+  //   let month: IDay[][] = [];
+  //   let date: number = 1 - firstDayNumber;
+  //
+  //   for (let week = 0; week < 6; week++) {
+  //     let weekArray = [];
+  //
+  //     for (let day = 0; day < 7; day++) {
+  //       const currDate = new Date(this.year, this.month, date);
+  //
+  //       const isCurrentMonthDay = currDate.getMonth() === this.month;
+  //
+  //       const isToday =
+  //         currDate.getDate() === this.date &&
+  //         new Date().getMonth() === this.month;
+  //
+  //       weekArray.push({
+  //         value: currDate.getDate(),
+  //         isToday,
+  //         isCurrentMonthDay,
+  //         isWeekendDay: day > 4,
+  //       });
+  //
+  //       date++;
+  //     }
+  //
+  //     month.push(weekArray);
+  //   }
+  //
+  //   return month;
+  // }
 
-    for (let week = 0; week < 6; week++) {
-      let weekArray = [];
-
-      for (let day = 0; day < 7; day++) {
-        const currDate = new Date(this.year, this.month, date);
-
-        const isCurrentMonthDay = currDate.getMonth() === this.month;
-
-        const isToday =
-          currDate.getDate() === this.date &&
-          new Date().getMonth() === this.month;
-
-        weekArray.push({
-          value: currDate.getDate(),
-          isToday,
-          isCurrentMonthDay,
-          isWeekendDay: day > 4,
-        });
-
-        date++;
-      }
-
-      month.push(weekArray);
-    }
-
-    return month;
-  }
-
-  constructor() {
-    const dateObj: Date = new Date();
-
-    this._date = dateObj.getDate();
-    this._year = dateObj.getFullYear();
-    this._day = dateObj.getDay();
-    this._month = dateObj.getMonth();
-
+  constructor(private domainModel: ICalendarDM) {
     makeAutoObservable(this);
   }
 
   incrementMonth = () => {
-    if (this._month === 11) {
-      this._month = 0;
-      ++this._year;
+    if (this.domainModel.month === 11) {
+      this.domainModel.month = 0;
+      ++this.domainModel.year;
     } else {
-      ++this._month;
+      ++this.domainModel.month;
     }
   };
 
   decrementMonth = () => {
-    if (this._month === 0) {
-      this._month = 11;
-      --this._year;
+    if (this.domainModel.month === 0) {
+      this.domainModel.month = 11;
+      --this.domainModel.year;
     } else {
-      --this._month;
+      --this.domainModel.month;
     }
   };
 }

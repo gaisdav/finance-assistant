@@ -1,4 +1,4 @@
-import Main from "./View/pages/Main";
+import Main from "./View/pages/Calendar";
 import { useRoute } from "react-router5";
 import { constants } from "router5";
 import { IStorage } from "./Storage/interfaces";

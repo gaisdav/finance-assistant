@@ -6,6 +6,7 @@ import DBClient from "../Clients/DBClient";
 import { AmountDM } from "../DomainModels/AmountDM";
 import { IStorage } from "./interfaces";
 import { AppSettingsRepository } from "../Repositories/AppSettingsRepository";
+import { CalendarDM } from "../DomainModels/CalendarDM";
 
 export const clients = {
   db: new DBClient(),
@@ -13,6 +14,7 @@ export const clients = {
 
 export const domainModels = {
   amount: new AmountDM(),
+  calendar: new CalendarDM(),
 };
 
 export const repositories = {
@@ -26,5 +28,5 @@ export const services = {
 
 export const storage: IStorage = {
   amount: new AmountVM(services.amount, domainModels.amount),
-  calendar: new CalendarVM(),
+  calendar: new CalendarVM(domainModels.calendar),
 };

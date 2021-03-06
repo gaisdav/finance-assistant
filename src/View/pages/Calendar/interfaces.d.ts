@@ -6,11 +6,14 @@ export interface IDay {
 }
 
 export interface ICalendarVM {
-  weekDays: IDay[][];
+  // weekDays: [IDay, IDay, IDay, IDay, IDay, IDay, IDay];
   monthDays: IDay[][];
   year: number;
   month: number;
   date: number;
+  currentYear: number;
+  currentMonth: number;
+  currentDate: number;
   monthTitle: string;
   incrementMonth: () => void;
   decrementMonth: () => void;
