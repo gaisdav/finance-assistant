@@ -10,7 +10,7 @@ export class AppSettingsRepository implements IAppSettingsRepository {
       throw new Error("DB is not initialized");
     }
 
-    return await this.dbClient.db.get("appSettings", "appSettings");
+    return new Promise(() => void 0);
   }
 
   async setSettings(

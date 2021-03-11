@@ -1,16 +1,11 @@
 import { DBSchema } from "idb";
-import { IAmountDM } from "../../DomainModels/AmountDM/interfaces";
-import { IAppSettingsDM } from "../../DomainModels/AppSettingsDM/interfaces";
+import { IUserDM } from "../../DomainModels/UserDM/interfaces";
 
 export interface IDB extends DBSchema {
-  amountStore: {
+  store: {
     key: TStoreNames;
-    value: IAmountDM;
-  };
-  appSettings: {
-    key: TStoreNames;
-    value: IAppSettingsDM;
+    value: IUserDM | null;
   };
 }
 
-export type TStoreNames = keyof Pick<IDB, "amountStore" | "appSettings">;
+export type TStoreNames = "user";
