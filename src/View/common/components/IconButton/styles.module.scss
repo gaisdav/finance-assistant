@@ -1,16 +1,19 @@
 @import "src/View/common/styles/constants";
 
 .button {
-  height: $base*8;
-  width: $base*8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $base * 8;
+  width: $base * 8;
   border-radius: 100%;
   transition: 300ms;
 
   &:hover {
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
   }
 
   &:active {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
   }
 }

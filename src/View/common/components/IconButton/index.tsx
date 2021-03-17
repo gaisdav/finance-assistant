@@ -3,7 +3,7 @@ import { button } from "@storybook/addon-knobs";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 
-interface IProps {
+export interface IProps {
   className?: string;
   onClick: () => void;
 }

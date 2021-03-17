@@ -1,0 +1,9 @@
+@import "src/View/common/styles/constants";
+
+.error {
+  color: $error-color;
+}
+
+.inputError {
+  border-color: $error-color;
+}
