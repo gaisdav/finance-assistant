@@ -6,12 +6,13 @@ export default {
   component: Profile,
 } as Meta;
 
-export const ExampleStory: Story<IProps> = (args) => {
-  const { name } = args;
+export const Example: Story<IProps> = (args) => {
+  const { name, theme } = args;
 
-  return <Profile name={name} />;
+  return <Profile name={name} theme={theme} />;
 };
 
-ExampleStory.args = {
-  name: "Гайсар Давлеткильдин",
+Example.args = {
+  name: "Давлеткильдин Гайсар",
+  theme: "Светлая",
 };

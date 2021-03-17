@@ -1,8 +1,8 @@
 @import "src/View/common/styles/constants";
 
 .card {
-  padding: 12px;
-  //border: 1px solid $border-color;
+  position: relative;
+  padding: $base * 3;
   border-radius: $base * 2;
   background: $card-bg-color;
   box-shadow: 0 0 2px 2px $card-shadow-color;

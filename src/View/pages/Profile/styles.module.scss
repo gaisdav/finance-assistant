@@ -1,0 +1,11 @@
+@import "src/View/common/styles/constants";
+
+.row {
+  margin-bottom: $base*2;
+}
+
+.editIcon {
+  position: absolute;
+  top: $base;
+  right: $base;
+}
