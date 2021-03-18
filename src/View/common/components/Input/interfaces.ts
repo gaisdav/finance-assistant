@@ -9,7 +9,7 @@ export interface IProps {
   /**
    * Значение поля
    */
-  value: string;
+  value?: string;
   /**
    * Название поля
    */

@@ -12,6 +12,7 @@ export default {
 const TemplateRequire: Story<IProps> = (args) => {
   return (
     <Input
+      htmlFor="input"
       labelText={args.labelText}
       onChange={args.onChange}
       value={args.value}
@@ -21,8 +22,8 @@ const TemplateRequire: Story<IProps> = (args) => {
   );
 };
 
-export const RequireInputComponent = TemplateRequire.bind({});
-RequireInputComponent.args = {
+export const InputStory = TemplateRequire.bind({});
+InputStory.args = {
   labelText: "Название поля",
   errorText: "Текст ошибки",
   value: "123",

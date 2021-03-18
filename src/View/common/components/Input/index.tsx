@@ -11,18 +11,18 @@ const Input: FC<IProps> = ({
   errorText,
   htmlFor,
 }) => {
-  const { inputError, error } = styles;
+  const { inputError, error, sup, input, label } = styles;
 
-  const inputStyles = classNames(Boolean(errorText) && inputError);
+  const inputStyles = classNames([input, Boolean(errorText) && inputError]);
 
   return (
     <>
       {labelText && (
-        <div>
+        <div className={label}>
           <label aria-required="true" htmlFor={htmlFor}>
             {labelText}
           </label>
-          {require && <sup>*</sup>}
+          {require && <sup className={sup}>*</sup>}
         </div>
       )}
 
