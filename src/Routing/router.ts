@@ -1,4 +1,5 @@
 import { createRouter } from "router5";
+import browserPlugin from "router5-plugin-browser";
 import { routes } from "./routes";
 import { onActivateMiddlewareFactory } from "./middleware";
 import { IStorage } from "../Storage/interfaces";
@@ -9,10 +10,15 @@ const router = createRouter<IStorage>(
   {
     allowNotFound: true,
     queryParamsMode: "loose",
-    defaultRoute: "main",
     autoCleanUp: false,
   },
   storage
+);
+
+router.usePlugin(
+  browserPlugin({
+    forceDeactivate: false,
+  })
 );
 
 router.useMiddleware(onActivateMiddlewareFactory(routes));

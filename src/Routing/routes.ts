@@ -9,4 +9,8 @@ export const routes: IRoute<IStorage>[] = [
       dependencies.amount.getAmount();
     },
   },
+  {
+    name: "profile",
+    path: "/profile",
+  },
 ];

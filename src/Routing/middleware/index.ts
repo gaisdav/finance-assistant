@@ -6,7 +6,7 @@ export const onActivateMiddlewareFactory = (
   routes: IRoute<IStorage>[]
 ): MiddlewareFactory<IStorage> => (router) => (toState): boolean => {
   const route = routes.find((route) => route.name === toState.name);
-  route?.onActivate(router.getDependencies());
+  route?.onActivate && route?.onActivate(router.getDependencies());
 
   return true;
 };

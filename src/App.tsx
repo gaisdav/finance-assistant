@@ -2,6 +2,7 @@ import Main from "./View/pages/Calendar";
 import { useRoute } from "react-router5";
 import { constants } from "router5";
 import { IStorage } from "./Storage/interfaces";
+import Profile from "./View/pages/Profile";
 
 function App() {
   const {
@@ -10,10 +11,16 @@ function App() {
   } = useRoute();
 
   // TODO вынести в хук
-  const { amount, calendar }: IStorage = router.getDependencies() as IStorage;
+  const {
+    amount,
+    calendar,
+    user,
+  }: IStorage = router.getDependencies() as IStorage;
 
   if (routeName === "main")
     return <Main calendarApi={calendar} amountVM={amount} />;
+
+  if (routeName === "profile") return <Profile user={user} />;
 
   if (routeName === constants.UNKNOWN_ROUTE)
     return <div>Страница не найдена</div>;

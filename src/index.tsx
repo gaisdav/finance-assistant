@@ -6,16 +6,21 @@ import App from "./App";
 import { RouterProvider } from "react-router5";
 import router from "./Routing/router";
 import { clients, repositories } from "./Storage/storage";
+import { TAppTheme } from "./DomainModels/UserDM/interfaces";
 
 configure({ enforceActions: "observed" });
 
+const theme: TAppTheme = "light";
+
 const bodyEl = document.querySelector("body");
 const statusBarMetaTag = document.querySelector('meta[name="theme-color"]');
+const colorSchemeMetaTag = document.querySelector('meta[name="color-scheme"]');
 
-bodyEl?.setAttribute("data-theme", "light");
+bodyEl?.setAttribute("data-theme", theme);
 
 const bodyBg = getComputedStyle(document.body).getPropertyValue("--body-bg");
 statusBarMetaTag?.setAttribute("content", bodyBg);
+colorSchemeMetaTag?.setAttribute("content", theme);
 
 clients.db
   .init()
