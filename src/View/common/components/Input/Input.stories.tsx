@@ -5,7 +5,7 @@ import { boolean } from "@storybook/addon-knobs";
 import { IProps } from "./interfaces";
 
 export default {
-  title: "Inputs/Input",
+  title: "Components/Inputs/Input",
   component: Input,
 };
 

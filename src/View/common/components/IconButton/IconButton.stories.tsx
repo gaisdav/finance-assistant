@@ -4,13 +4,17 @@ import { action } from "@storybook/addon-actions";
 import { ReactComponent as EditIcon } from "../../assets/icons/edit.svg";
 
 export default {
-  title: "Buttons/IconButton",
+  title: "Components/Buttons/IconButton",
   component: IconButton,
 };
 
 const Template: Story<IProps> = (args) => {
   return (
-    <IconButton onClick={args.onClick} className={args.className}>
+    <IconButton
+      onClick={args.onClick}
+      className={args.className}
+      title={args.title}
+    >
       <EditIcon />
     </IconButton>
   );
@@ -20,4 +24,5 @@ export const IconButtonComponent = Template.bind({});
 IconButtonComponent.args = {
   className: "className",
   onClick: action("click"),
+  title: "IconButton",
 };

@@ -1,8 +1,8 @@
 import { FC } from "react";
-import Card from "../../../common/components/Card";
-import Input from "../../../common/components/Input";
-import RadioGroup from "../../../common/components/RadioGroup";
-import styles from "../styles.module.scss";
+import Card from "../../../../common/components/Card";
+import Input from "../../../../common/components/Input";
+import RadioGroup from "../../../../common/components/RadioGroup";
+import styles from "../../styles.module.scss";
 
 const EditForm: FC = () => {
   const { row } = styles;

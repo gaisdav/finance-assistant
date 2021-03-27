@@ -2,7 +2,6 @@ import { FC } from "react";
 import viewStyles from "./styles.module.scss";
 import styles from "../../styles.module.scss";
 import { ICalendarVM } from "../../../interfaces";
-import Subtitle from "../../../../../common/components/Subtitle";
 import { Observer } from "mobx-react-lite";
 
 /**
@@ -27,7 +26,7 @@ const WeekView: FC<IProps> = ({ calendarApi }) => {
               сюда
             </button>
             <div className={styles.monthTitle}>
-              <Subtitle>{monthTitle}</Subtitle>
+              <h4>{monthTitle}</h4>
             </div>
             <button className={styles.next} onClick={incrementMonth}>
               туда

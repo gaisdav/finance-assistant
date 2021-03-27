@@ -5,7 +5,7 @@ import { IProps } from "./interfaces";
 import RadioGroup from "./index";
 
 export default {
-  title: "Inputs/RadioGroup",
+  title: "Components/Inputs/RadioGroup",
   component: RadioGroup,
 };
 
