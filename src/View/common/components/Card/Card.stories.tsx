@@ -1,5 +1,5 @@
 import Card, { IProps } from "./index";
-import { text } from "@storybook/addon-knobs";
+import { text, boolean } from "@storybook/addon-knobs";
 import { Story } from "@storybook/react/types-6-0";
 
 export default {
@@ -16,4 +16,5 @@ const Template: Story<IProps> = (args) => {
 export const CardComponent = Template.bind({});
 CardComponent.args = {
   className: "styles",
+  loading: boolean("loading", false),
 };

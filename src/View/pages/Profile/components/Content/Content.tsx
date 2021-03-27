@@ -1,8 +1,7 @@
 import { FC } from "react";
-import IconButton from "../../../../common/components/IconButton";
-import { ReactComponent as EditIcon } from "../../../../common/assets/icons/edit.svg";
-import Card from "../../../../common/components/Card";
 import styles from "../../styles.module.scss";
+import Card from "../../../../common/components/Card";
+import Button from "../../../../common/components/Button";
 
 /**
  * Интерфейс компонента страницы пользователя.
@@ -19,22 +18,22 @@ export interface IProps {
 }
 
 const Content: FC<IProps> = ({ name, theme }) => {
-  const { row, editIcon } = styles;
+  const { row } = styles;
 
   return (
-    <Card>
-      <IconButton className={editIcon} onClick={() => {}}>
-        <EditIcon />
-      </IconButton>
-      <div className={row}>
+    <>
+      <Card className={row}>
         <h4>ФИО:</h4>
         <span>{name}</span>
-      </div>
-      <div className={row}>
+      </Card>
+
+      <Card className={row}>
         <h4>Тема приложения:</h4>
         <span>{theme}</span>
-      </div>
-    </Card>
+      </Card>
+
+      <Button>Редактировать</Button>
+    </>
   );
 };
 

@@ -8,43 +8,45 @@ const EditForm: FC = () => {
   const { row } = styles;
 
   return (
-    <Card>
-      <form>
-        <div className={row}>
-          <Input
-            htmlFor="name"
-            labelText="Имя"
-            onChange={() => {}}
-            require={true}
-          />
-        </div>
+    <form>
+      <Card className={row}>
+        <Input
+          className={row}
+          htmlFor="name"
+          labelText="Имя"
+          onChange={() => {}}
+          require={true}
+        />
 
-        <div className={row}>
-          <Input htmlFor="lastname" labelText="Фамилия" onChange={() => {}} />
-        </div>
+        <Input
+          className={row}
+          htmlFor="lastname"
+          labelText="Фамилия"
+          onChange={() => {}}
+        />
+      </Card>
 
-        <div className={row}>
-          <RadioGroup
-            radioButtons={[
-              {
-                label: "Светлая",
-                value: "light",
-                htmlFor: "light",
-              },
-              {
-                label: "Темная",
-                value: "dark",
-                htmlFor: "dark",
-              },
-            ]}
-            labelText="Выберите тему"
-            groupName="theme"
-            require={true}
-            onChange={() => {}}
-          />
-        </div>
-      </form>
-    </Card>
+      <Card className={row}>
+        <RadioGroup
+          radioButtons={[
+            {
+              label: "Светлая",
+              value: "light",
+              htmlFor: "light",
+            },
+            {
+              label: "Темная",
+              value: "dark",
+              htmlFor: "dark",
+            },
+          ]}
+          labelText="Выберите тему"
+          groupName="theme"
+          require={true}
+          onChange={() => {}}
+        />
+      </Card>
+    </form>
   );
 };
 

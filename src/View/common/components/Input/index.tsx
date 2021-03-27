@@ -10,13 +10,14 @@ const Input: FC<IProps> = ({
   require,
   errorText,
   htmlFor,
+  className = "",
 }) => {
   const { inputError, error, sup, input, label } = styles;
 
   const inputStyles = classNames([input, Boolean(errorText) && inputError]);
 
   return (
-    <>
+    <div className={className}>
       {labelText && (
         <div className={label}>
           <label aria-required="true" htmlFor={htmlFor}>
@@ -35,7 +36,7 @@ const Input: FC<IProps> = ({
       />
 
       <div>{errorText && <sub className={error}>{errorText}</sub>}</div>
-    </>
+    </div>
   );
 };
 

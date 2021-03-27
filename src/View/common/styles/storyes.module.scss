@@ -1,0 +1,104 @@
+@import "src/View/common/styles/constants";
+
+.wrapper {
+  padding: $base-space;
+}
+
+.story {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: $text-color;
+
+  & > div {
+    margin-right: $base-space * 5;
+    margin-bottom: $base-space * 5;
+  }
+
+  h4 {
+    margin-bottom: $base-space;
+  }
+
+  p {
+    margin-bottom: $base-space;
+  }
+}
+
+.colors {
+  div {
+    height: 40px;
+    width: 40px;
+    margin-bottom: $base-space;
+  }
+}
+
+.border {
+  div {
+    margin-bottom: $base-space;
+  }
+}
+
+.card {
+  div {
+    margin-bottom: $base-space;
+  }
+}
+
+.body {
+  div {
+    margin-bottom: $base-space;
+  }
+}
+
+.text {
+  div {
+    max-width: 300px;
+  }
+}
+
+.mainColor {
+  background: $main-color;
+}
+
+.secondaryColor {
+  background: $secondary-color;
+}
+
+.errorColor {
+  background: $error-color
+}
+
+.successColor {
+  background: $success-color
+}
+
+.warningColor {
+  background: $warning-color
+}
+
+.textColor {
+  color: $text-color
+}
+
+.borderColor {
+  height: 40px;
+  width: 40px;
+  border: 1px solid $border-color;
+}
+
+.borderColor5px {
+  height: 40px;
+  width: 40px;
+  border: 5px solid $border-color;
+}
+
+.cardBg {
+  height: 40px;
+  width: 40px;
+}
+
+.bodyBg {
+  height: 40px;
+  width: 40px;
+  background: $body-bg;
+}

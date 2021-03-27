@@ -26,4 +26,8 @@ export interface IProps {
    * Текст ошибки
    */
   htmlFor?: string;
+  /**
+   * Стили
+   */
+  className?: string;
 }
