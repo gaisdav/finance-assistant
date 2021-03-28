@@ -1,0 +1,31 @@
+:root {
+  --main-color: #2f3c56;
+  --secondary-color: #ff844b;
+  --error-color: #ff0000;
+  --success-color: #00bd03;
+  --warning-color: #dc8f00;
+
+  --border-color: #d6d6d6;
+  --text-color: #0a0d25;
+  --card-bg: #ffffff;
+  --card-shadow-color: rgba(0, 0, 0, 0.1);
+  --body-bg: #e3edf2;
+}
+
+body[data-theme="dark"] {
+  --border-color: #585858;
+  --card-bg: #2b2b2b;
+  --card-shadow-color: rgba(158, 158, 158, 0.1);
+  --body-bg: #252525;
+  --text-color: #dddddd;
+}
+
+@media (prefers-color-scheme: dark) {
+  body[data-theme="device"] {
+    --border-color: #585858;
+    --card-bg: #2b2b2b;
+    --card-shadow-color: rgba(158, 158, 158, 0.1);
+    --body-bg: #252525;
+    --text-color: #dddddd;
+  }
+}
