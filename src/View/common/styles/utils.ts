@@ -1,4 +1,4 @@
-import style from "./storyes.module.scss";
+import style from "./palette.module.scss";
 
 const { colors, text, border, card, body } = style;
 

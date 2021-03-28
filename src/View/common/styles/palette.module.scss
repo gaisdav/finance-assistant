@@ -2,13 +2,17 @@
 
 .wrapper {
   padding: $base-space;
+  color: $text-color;
+
+  h1 {
+    margin-bottom: $base-space;
+  }
 }
 
 .story {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  color: $text-color;
 
   & > div {
     margin-right: $base-space * 5;
