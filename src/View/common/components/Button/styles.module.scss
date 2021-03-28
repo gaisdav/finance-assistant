@@ -1,0 +1,70 @@
+@import "src/View/common/styles/constants";
+
+.button {
+  padding: $base-space;
+  border-radius: $base-radius;
+
+  &.outlined {
+    border: 1px solid $border-color;
+  }
+
+  &.filled {
+    background-color: white;
+  }
+}
+
+.error {
+  &.outlined {
+    border: 1px solid $error-color;
+    color: $error-color;
+  }
+
+  &.filled {
+    background-color: $error-color;
+    color: white;
+  }
+}
+
+.success {
+  &.outlined {
+    border: 1px solid $success-color;
+    color: $success-color;
+  }
+
+  &.filled {
+    background-color: $success-color;
+    color: white;
+  }
+}
+
+.main {
+  &.outlined {
+    border: 1px solid $main-color;
+    color: $main-color;
+
+  }
+
+  &.filled {
+    background-color: $main-color;
+    color: white;
+  }
+}
+
+.secondary {
+  &.outlined {
+    border: 1px solid $secondary-color;
+  }
+
+  &.filled {
+    background-color: $secondary-color;
+  }
+}
+
+.small {
+  padding: $base * 2;
+}
+
+.large {
+  padding: $base * 4;
+}
+

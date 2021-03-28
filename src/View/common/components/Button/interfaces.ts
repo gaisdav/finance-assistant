@@ -1,9 +1,10 @@
 export interface IProps {
-  variant?: TButtonVariant;
+  className?: string;
   type?: TButtonType;
+  variant?: TButtonVariant;
   size?: TButtonSize;
 }
 
-type TButtonVariant = "base" | "error" | "success" | "main" | "secondary";
-type TButtonType = "base" | "outlined" | "filled";
+type TButtonType = "base" | "error" | "success" | "main" | "secondary";
+type TButtonVariant = "outlined" | "filled";
 type TButtonSize = "small" | "default" | "large";

@@ -32,7 +32,7 @@ const Content: FC<IProps> = ({ name, theme }) => {
         <span>{theme}</span>
       </Card>
 
-      <Button>Редактировать</Button>
+      <Button type="success">Редактировать</Button>
     </>
   );
 };
