@@ -6,11 +6,12 @@ import { IProps } from "./interfaces";
 const Input: FC<IProps> = ({
   labelText,
   onChange,
-  value,
-  require,
-  errorText,
+  value = "",
+  require = false,
+  errorText = "",
   htmlFor,
   className = "",
+  placeholder = "",
 }) => {
   const { inputError, error, sup, input, label } = styles;
 
@@ -20,9 +21,7 @@ const Input: FC<IProps> = ({
     <div className={className}>
       {labelText && (
         <div className={label}>
-          <label aria-required="true" htmlFor={htmlFor}>
-            {labelText}
-          </label>
+          <label htmlFor={htmlFor}>{labelText}</label>{" "}
           {require && <sup className={sup}>*</sup>}
         </div>
       )}
@@ -33,9 +32,10 @@ const Input: FC<IProps> = ({
         type="text"
         onChange={onChange}
         value={value}
+        placeholder={placeholder}
       />
 
-      <div>{errorText && <sub className={error}>{errorText}</sub>}</div>
+      {errorText && <div className={error}>{errorText}</div>}
     </div>
   );
 };

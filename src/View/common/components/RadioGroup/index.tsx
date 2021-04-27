@@ -10,15 +10,14 @@ const RadioGroup: FC<IProps> = ({
   onChange,
   groupName,
 }) => {
-  const { label, sup, error, radioWrapper, radio, radioLabel } = styles;
+  const { sup, error, radioWrapper, radio, radioLabel } = styles;
 
   return (
     <div>
       {labelText && (
-        <div className={label}>
-          {labelText}
-          {require && <sup className={sup}>*</sup>}
-        </div>
+        <label>
+          {labelText} {require && <sup className={sup}>*</sup>}
+        </label>
       )}
 
       {radioButtons.map((button, index) => (
@@ -30,13 +29,17 @@ const RadioGroup: FC<IProps> = ({
             type="radio"
             value={button.value}
           />
-          <label htmlFor={button.htmlFor} className={radioLabel}>
+          <label
+            data-customize="reset"
+            htmlFor={button.htmlFor}
+            className={radioLabel}
+          >
             {button.label}
           </label>
         </span>
       ))}
 
-      <div>{errorText && <sub className={error}>{errorText}</sub>}</div>
+      {errorText && <div className={error}>{errorText}</div>}
     </div>
   );
 };

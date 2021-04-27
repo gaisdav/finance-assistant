@@ -1,10 +1,12 @@
 @import "src/View/common/styles/constants";
 
 .error {
+  font-size: $base * 3;
   color: $error-color;
+  margin-top: $base;
 }
 
-.label{
+.label {
   margin-bottom: 2px;
 }
 

@@ -30,4 +30,8 @@ export interface IProps {
    * Стили
    */
   className?: string;
+  /**
+   * Placeholder
+   */
+  placeholder?: string;
 }

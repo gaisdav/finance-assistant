@@ -1,11 +1,9 @@
 @import "src/View/common/styles/constants";
 
 .error {
+  font-size: $base * 3;
   color: $error-color;
-}
-
-.label {
-  margin-bottom: 2px;
+  margin-top: $base;
 }
 
 .radio {

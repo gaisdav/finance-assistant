@@ -1,9 +1,9 @@
 import { Story } from "@storybook/react/types-6-0";
 import style from "./palette.module.scss";
-import Card from "../components/Card";
+import Card from "../../components/Card";
 import { useEffect } from "react";
 import { showColor } from "./utils";
-import { radios } from "@storybook/addon-knobs";
+import { boolean } from "@storybook/addon-knobs";
 
 export default {
   title: "Palette",
@@ -23,27 +23,21 @@ const {
   successColor,
   warningColor,
   textColor,
+  secondaryTextColor,
   borderColor,
   borderColor5px,
   cardBg,
   bodyBg,
 } = style;
 
-const Palette: Story = () => {
+const Palette: Story = (props) => {
   useEffect(() => {
     showColor();
   }, []);
 
-  const options = {
-    light: "light",
-    dark: "dark",
-  };
-
-  const theme = radios("theme", options, "light");
-
   return (
-    <body data-theme={theme} className={wrapper}>
-      <h1>You can change theme on "Knobs" tab</h1>
+    <body data-theme={props.dark ? "dark" : "light"} className={wrapper}>
+      <h1>You can change theme on "Controls" tab</h1>
       <div className={story}>
         <div className={colors}>
           <h4>Colors</h4>
@@ -65,7 +59,16 @@ const Palette: Story = () => {
 
         <div className={text}>
           <h4>Text color</h4>
+          <span>main color</span>
           <div className={textColor}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
+            porro, ullam? Dolore fugit quia ullam? Ad consectetur distinctio ex
+            excepturi facilis labore molestiae nulla quae, recusandae reiciendis
+            sed sint, tempore.
+          </div>
+
+          <span className={secondaryTextColor}>secondary color</span>
+          <div className={secondaryTextColor}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
             porro, ullam? Dolore fugit quia ullam? Ad consectetur distinctio ex
             excepturi facilis labore molestiae nulla quae, recusandae reiciendis
@@ -95,11 +98,6 @@ const Palette: Story = () => {
 
 export const ThemeColors = Palette.bind({});
 
-ThemeColors.parameters = {
-  backgrounds: {
-    values: [
-      { name: "red", value: "#f00" },
-      { name: "green", value: "#0f0" },
-    ],
-  },
+ThemeColors.args = {
+  dark: boolean("dark", false),
 };

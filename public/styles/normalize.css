@@ -174,7 +174,7 @@ textarea {
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 /**
@@ -189,8 +189,7 @@ input {
   padding: 4px;
 }
 
-input{
-
+input {
 }
 
 /**
@@ -222,7 +221,6 @@ button,
   user-select: none;
   cursor: pointer;
 }
-
 
 button:active,
 [type="button"]:active,
@@ -378,4 +376,10 @@ template {
 
 [hidden] {
   display: none;
+}
+
+label:not([data-customize="reset"]) {
+  display: inline-block;
+  color: var(--secondary-text-color);
+  margin-bottom: 2px;
 }

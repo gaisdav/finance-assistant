@@ -18,6 +18,7 @@ const TemplateRequire: Story<IProps> = (args) => {
       value={args.value}
       require={args.require}
       errorText={args.errorText}
+      placeholder={args.placeholder}
     />
   );
 };
@@ -27,6 +28,7 @@ InputStory.args = {
   labelText: "Название поля",
   errorText: "Текст ошибки",
   value: "123",
+  placeholder: "test",
   require: boolean("require", true),
   onChange: action("change"),
 };
