@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Библитеку компонентов можно посмотреть
+[https://gaisdav.github.io/finance-assistant/?path=/story/palette--theme-colors](тут)
 
 ## Available Scripts
 
