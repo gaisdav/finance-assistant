@@ -1,4 +1,4 @@
-## Библитеку компонентов можно посмотреть
+## Библитеку компонентов можно посмотреть по ссылке ниже
 [https://gaisdav.github.io/finance-assistant/?path=/story/palette--theme-colors](тут)
 
 ## Available Scripts
