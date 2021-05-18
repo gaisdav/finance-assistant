@@ -3,6 +3,8 @@ export interface IProps {
   type?: TButtonType;
   variant?: TButtonVariant;
   size?: TButtonSize;
+  loading?: boolean;
+  onClick?: (event: any) => void;
 }
 
 type TButtonType = "base" | "error" | "success" | "main" | "secondary";

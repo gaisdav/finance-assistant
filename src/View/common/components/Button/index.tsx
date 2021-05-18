@@ -13,6 +13,7 @@ const {
   large,
   filled,
   outlined,
+  base,
 } = styles;
 
 const Button: FC<IProps> = ({
@@ -21,6 +22,8 @@ const Button: FC<IProps> = ({
   variant = "filled",
   type = "base",
   size = "default",
+  onClick,
+  loading,
 }) => {
   let classes = button;
 
@@ -36,6 +39,9 @@ const Button: FC<IProps> = ({
       break;
     case "secondary":
       classes = classNames(classes, secondary);
+      break;
+    case "base":
+      classes = classNames(classes, base);
       break;
   }
 
@@ -59,7 +65,11 @@ const Button: FC<IProps> = ({
 
   classes = classNames(classes, className);
 
-  return <button className={classes}>{children}</button>;
+  return (
+    <button onClick={onClick} className={classes}>
+      {loading ? "загрузка" : children}
+    </button>
+  );
 };
 
 export default Button;

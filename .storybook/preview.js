@@ -3,6 +3,8 @@ export const parameters = {
   background: "#eee",
 };
 
+// TODO https://storybook.js.org/addons/storybook-addon-locale
+
 // const options = {
 //   light: "light",
 //   dark: "dark",

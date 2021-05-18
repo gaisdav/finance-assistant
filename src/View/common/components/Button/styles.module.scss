@@ -9,7 +9,14 @@
   }
 
   &.filled {
+    color: white;
     background-color: white;
+  }
+}
+
+.base {
+  &.filled {
+    color: $text-color;
   }
 }
 
@@ -21,7 +28,6 @@
 
   &.filled {
     background-color: $error-color;
-    color: white;
   }
 }
 
@@ -33,7 +39,6 @@
 
   &.filled {
     background-color: $success-color;
-    color: white;
   }
 }
 
@@ -46,7 +51,6 @@
 
   &.filled {
     background-color: $main-color;
-    color: white;
   }
 }
 

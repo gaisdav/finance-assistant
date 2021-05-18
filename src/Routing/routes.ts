@@ -12,5 +12,11 @@ export const routes: IRoute<IStorage>[] = [
   {
     name: "profile",
     path: "/profile",
+    children: [
+      {
+        name: "edit",
+        path: "/edit",
+      },
+    ],
   },
 ];

@@ -2,6 +2,7 @@ import { FC } from "react";
 import styles from "../../styles.module.scss";
 import Card from "../../../../common/components/Card";
 import Button from "../../../../common/components/Button";
+import { useRouter } from "react-router5";
 
 /**
  * Интерфейс компонента страницы пользователя.
@@ -18,6 +19,7 @@ export interface IProps {
 }
 
 const Content: FC<IProps> = ({ name, theme }) => {
+  const { navigate } = useRouter();
   const { row } = styles;
 
   return (
@@ -32,7 +34,9 @@ const Content: FC<IProps> = ({ name, theme }) => {
         <span>{theme}</span>
       </Card>
 
-      <Button type="success">Редактировать</Button>
+      <Button type="success" onClick={() => navigate("profile.edit")}>
+        Редактировать
+      </Button>
     </>
   );
 };

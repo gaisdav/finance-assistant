@@ -3,8 +3,12 @@ import Card from "../../../../common/components/Card";
 import Input from "../../../../common/components/Input";
 import RadioGroup from "../../../../common/components/RadioGroup";
 import styles from "../../styles.module.scss";
+import Button from "../../../../common/components/Button";
+import { useRouter } from "react-router5";
 
 const EditForm: FC = () => {
+  const { navigate } = useRouter();
+
   const { row } = styles;
 
   return (
@@ -46,6 +50,13 @@ const EditForm: FC = () => {
           onChange={() => {}}
         />
       </Card>
+
+      <Button type="error" onClick={() => navigate("profile")}>
+        Отмена
+      </Button>
+      <Button type="success" onClick={() => navigate("profile")}>
+        Сохранить
+      </Button>
     </form>
   );
 };
