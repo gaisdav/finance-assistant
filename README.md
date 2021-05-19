@@ -1,5 +1,5 @@
 ## Библитеку компонентов можно посмотреть по ссылке ниже
-[https://gaisdav.github.io/finance-assistant/?path=/story/palette--theme-colors](тут)
+[https://gaisdav.github.io/finance-assistant/?path=/story/palette--theme-colors](https://gaisdav.github.io/finance-assistant/?path=/story/palette--theme-colors)
 
 ## Available Scripts
 
